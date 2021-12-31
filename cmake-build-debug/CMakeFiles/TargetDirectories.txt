@@ -1,0 +1,4 @@
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/cpp/cmake-build-debug/CMakeFiles/test1.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/cpp/cmake-build-debug/CMakeFiles/cpp.dir
