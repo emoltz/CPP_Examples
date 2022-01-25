@@ -64,6 +64,37 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target AlgoTesting
+
+
+#############################################
+# Order-only phony target for AlgoTesting
+
+build cmake_object_order_depends_target_AlgoTesting: phony || CMakeFiles/AlgoTesting.dir
+
+build CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o: CXX_COMPILER__AlgoTesting_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/AlgoTesting.cpp || cmake_object_order_depends_target_AlgoTesting
+  DEP_FILE = CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/AlgoTesting.dir
+  OBJECT_FILE_DIR = CMakeFiles/AlgoTesting.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target AlgoTesting
+
+
+#############################################
+# Link the executable AlgoTesting
+
+build AlgoTesting: CXX_EXECUTABLE_LINKER__AlgoTesting_Debug CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/AlgoTesting.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = AlgoTesting
+  TARGET_PDB = AlgoTesting.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target hw1_testing
 
 
@@ -198,7 +229,7 @@ build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony hw1_testing es5541_hw2_q4 test1 cpp
+build all: phony AlgoTesting hw1_testing es5541_hw2_q4 test1 cpp
 
 # =============================================================================
 # Built-in targets
