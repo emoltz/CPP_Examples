@@ -34,7 +34,6 @@ vector<int> RSort(vector<int> &A){
         i = 0;
     }
 
-
     return A;
 }
 
