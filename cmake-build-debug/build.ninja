@@ -95,6 +95,37 @@ build hw3_q1: CXX_EXECUTABLE_LINKER__hw3_q1_Debug CMakeFiles/hw3_q1.dir/hw3_q1.c
   TARGET_PDB = hw3_q1.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target InsertionSort
+
+
+#############################################
+# Order-only phony target for InsertionSort
+
+build cmake_object_order_depends_target_InsertionSort: phony || CMakeFiles/InsertionSort.dir
+
+build CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o: CXX_COMPILER__InsertionSort_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/InsertionSort.cpp || cmake_object_order_depends_target_InsertionSort
+  DEP_FILE = CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/InsertionSort.dir
+  OBJECT_FILE_DIR = CMakeFiles/InsertionSort.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target InsertionSort
+
+
+#############################################
+# Link the executable InsertionSort
+
+build InsertionSort: CXX_EXECUTABLE_LINKER__InsertionSort_Debug CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/InsertionSort.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = InsertionSort
+  TARGET_PDB = InsertionSort.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target DeBug
 
 
@@ -322,7 +353,7 @@ build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony hw3_q1 DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 cpp
+build all: phony hw3_q1 InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 cpp
 
 # =============================================================================
 # Built-in targets

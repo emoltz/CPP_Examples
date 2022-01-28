@@ -1,6 +1,7 @@
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/hw3_q1.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/InsertionSort.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/DeBug.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/hw3.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/AlgoTesting.dir

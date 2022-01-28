@@ -22,7 +22,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -44,7 +45,8 @@
 						4,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -62,6 +64,13 @@
 					"id" : "DeBug::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-DeBug-Debug-f200a5c28c71a0fcf37a.json",
 					"name" : "DeBug",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "InsertionSort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InsertionSort-Debug-5c8279176ade41bee79f.json",
+					"name" : "InsertionSort",
 					"projectIndex" : 0
 				},
 				{
