@@ -1,87 +1,45 @@
+// ma6934_hw3_q6.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
 #include <iostream>
+#include<string>
 using namespace std;
-const int FLOOR_ROUND = 1;
-const int CEILING_ROUND = 2;
-const int ROUND = 3;
 
-void Q1(){
-    int firstItemPrice, secondItemPrice;
-    char clubCard;
-    double taxRate, basePrice, priceAfterDiscounts, totalPrice;
+int main()
+{
+    string startTime, day;
+    int minutes;
+    double cost;
+    cout << "Please enter the time when the call started in 24-hour notation ex: 13:30  : ";
+    cin >> startTime;
+    cout << "please enter the day of the week :(Mo Tu We Th	Fr Sa Su): ";
+    cin >> day;
+    cout << "Please enter the number of minutes: ";
+    cin >> minutes;
 
-
-    cout << "Enter price of first item: ";
-    cin >> firstItemPrice;
-
-    cout << "Enter price of second item: ";
-    cin >> secondItemPrice;
-
-
-
-}
-
-void Q2(){
-
-
-}
-
-void Q3(){
-
-
-}
-
-void Q4(){
-    double userInput;
-    int roundingMethod;
-
-    cout << "Please enter a Real number:" << endl;
-    cin >> userInput;
-
-    int floorRound, ceilingRound, round;
-    //the following int makes sure the rounding up works appropriately later
-    int roundUp = userInput + 1;
-
-    cout << "Choose your rounding method:" << endl << "1. Floor Round" << endl << "2. Ceiling Round" << endl << "3. Round to the nearest whole number" << endl;
-    cin >> roundingMethod;
-
-    //separate the number from its decimal
-    double numberBeforeDecimal, numberAfterDecimal;
-    numberBeforeDecimal = (int)userInput;
-    numberAfterDecimal = userInput - numberBeforeDecimal;
-
-
-    switch (roundingMethod) {
-        //Floor round
-        case FLOOR_ROUND:
-            cout << numberBeforeDecimal;
-            break;
-
-            //Ceiling Round
-        case CEILING_ROUND:
-
-            cout << roundUp;
-            break;
-
-            //regular round
-        case ROUND:
-            if (numberAfterDecimal > .5){
-
-                cout << roundUp;
-            }
-            else{
-                cout << numberBeforeDecimal;
-            }
-            break;
-        default: cout << "";
+    if (tolower(day[0]) == 's') {
+        cost = minutes * 0.15;
+    }
+    else if (startTime > "8:00" && startTime < "18:00") {
+        cost = minutes * 0.40;
 
     }
-}
+    else {
+        cost = minutes * 0.25;
 
-int main() {
-//    Q1();
-//    Q2();
-//    Q3();
-    Q4();
+    }
+    cout << " cost is: " << cost;
 
     return 0;
 }
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

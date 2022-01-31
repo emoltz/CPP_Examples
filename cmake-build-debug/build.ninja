@@ -42,17 +42,6 @@ include CMakeFiles/rules.ninja
 cmake_ninja_workdir = /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/cmake-build-debug/
 
 #############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.75/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-
-#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
@@ -62,6 +51,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.75/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target hw4
+
+
+#############################################
+# Order-only phony target for hw4
+
+build cmake_object_order_depends_target_hw4: phony || CMakeFiles/hw4.dir
+
+build CMakeFiles/hw4.dir/hw4.cpp.o: CXX_COMPILER__hw4_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw4.cpp || cmake_object_order_depends_target_hw4
+  DEP_FILE = CMakeFiles/hw4.dir/hw4.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/hw4.dir
+  OBJECT_FILE_DIR = CMakeFiles/hw4.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target hw4
+
+
+#############################################
+# Link the executable hw4
+
+build hw4: CXX_EXECUTABLE_LINKER__hw4_Debug CMakeFiles/hw4.dir/hw4.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/hw4.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = hw4
+  TARGET_PDB = hw4.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target hw3_q1
@@ -93,6 +124,37 @@ build hw3_q1: CXX_EXECUTABLE_LINKER__hw3_q1_Debug CMakeFiles/hw3_q1.dir/hw3_q1.c
   PRE_LINK = :
   TARGET_FILE = hw3_q1
   TARGET_PDB = hw3_q1.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cpp
+
+
+#############################################
+# Order-only phony target for cpp
+
+build cmake_object_order_depends_target_cpp: phony || CMakeFiles/cpp.dir
+
+build CMakeFiles/cpp.dir/main.cpp.o: CXX_COMPILER__cpp_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/main.cpp || cmake_object_order_depends_target_cpp
+  DEP_FILE = CMakeFiles/cpp.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/cpp.dir
+  OBJECT_FILE_DIR = CMakeFiles/cpp.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cpp
+
+
+#############################################
+# Link the executable cpp
+
+build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/cpp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = cpp
+  TARGET_PDB = cpp.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target InsertionSort
@@ -312,37 +374,6 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
   TARGET_PDB = test1.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target cpp
-
-
-#############################################
-# Order-only phony target for cpp
-
-build cmake_object_order_depends_target_cpp: phony || CMakeFiles/cpp.dir
-
-build CMakeFiles/cpp.dir/main.cpp.o: CXX_COMPILER__cpp_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/main.cpp || cmake_object_order_depends_target_cpp
-  DEP_FILE = CMakeFiles/cpp.dir/main.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles/cpp.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target cpp
-
-
-#############################################
-# Link the executable cpp
-
-build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
-  OBJECT_DIR = CMakeFiles/cpp.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = cpp
-  TARGET_PDB = cpp.dbg
-
-# =============================================================================
 # Target aliases.
 
 # =============================================================================
@@ -353,7 +384,7 @@ build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony hw3_q1 InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 cpp
+build all: phony hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1
 
 # =============================================================================
 # Built-in targets
