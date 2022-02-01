@@ -10,3 +10,4 @@
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/hw1_testing.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/es5541_hw2_q4.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/test1.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug/CMakeFiles/iterativeStatements.dir

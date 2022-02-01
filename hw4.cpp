@@ -12,10 +12,14 @@ void whileLoop(int n){
 }
 
 void forLoop(int n){
-    int outputNum = 2;
-    for(int i = 0; i < n; i++){
-        cout << outputNum << endl;
-        outputNum += 2;
+//    int outputNum = 2;
+//    for(int i = 0; i < n; i++){
+//        cout << outputNum << endl;
+//        outputNum += 2;
+//    }
+
+    for (int i = 0; i < n * 2; i += 2) {
+        cout << i + 2 << endl;
     }
 }
 
@@ -30,7 +34,7 @@ void Q1(){
 }
 
 int main(){
-    
+    Q1();
 
 
 }

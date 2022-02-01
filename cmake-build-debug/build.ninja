@@ -374,6 +374,37 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
   TARGET_PDB = test1.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target iterativeStatements
+
+
+#############################################
+# Order-only phony target for iterativeStatements
+
+build cmake_object_order_depends_target_iterativeStatements: phony || CMakeFiles/iterativeStatements.dir
+
+build CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o: CXX_COMPILER__iterativeStatements_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/iterativeStatements.cpp || cmake_object_order_depends_target_iterativeStatements
+  DEP_FILE = CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/iterativeStatements.dir
+  OBJECT_FILE_DIR = CMakeFiles/iterativeStatements.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target iterativeStatements
+
+
+#############################################
+# Link the executable iterativeStatements
+
+build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/iterativeStatements.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = iterativeStatements
+  TARGET_PDB = iterativeStatements.dbg
+
+# =============================================================================
 # Target aliases.
 
 # =============================================================================
@@ -384,7 +415,7 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1
+build all: phony hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 iterativeStatements
 
 # =============================================================================
 # Built-in targets
