@@ -34,8 +34,45 @@ void iterate(){
     }
 }
 
-int main(){
-    liftoff();
+void whileLoop(){
+    int i = -3;
+    while(i != 5){
+        cout << "[i] is not yet 5..." << endl;
+        i++;
+    }
+    cout << "[i] turned 5!";
+}
 
+void nestedLoops(){
+    int numberOfTimes = 5;
+    for (int i = 0; i < numberOfTimes; i++) {
+        cout << "___" << endl;
+        cout << "Outer " << i + 1 << endl;
+
+        for (int j = 0; j < numberOfTimes; j++) {
+            cout << "Inner " << j + 1 << " ";
+        }
+
+        cout << endl;
+    }
+}
+
+void daysInWeek() {
+    int weeks = 3, days_in_week = 7;
+
+    for (int i = 1, j = 0; i <= weeks; ++i) {
+        cout << "Week: " << i << endl;
+
+        for (; j <= days_in_week; ++j) {
+            cout << "    Day:" << j << endl;
+        }
+    }
+}
+
+int main(){
+//    liftoff();
+//    whileLoop();
+//    nestedLoops();
+    daysInWeek();
     return 0;
 }
