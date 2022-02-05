@@ -25,7 +25,8 @@
 						7,
 						8,
 						9,
-						10
+						10,
+						11
 					]
 				}
 			],
@@ -50,7 +51,8 @@
 						7,
 						8,
 						9,
-						10
+						10,
+						11
 					]
 				}
 			],
@@ -75,6 +77,13 @@
 					"id" : "InsertionSort::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-InsertionSort-Debug-5c8279176ade41bee79f.json",
 					"name" : "InsertionSort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PracticeExam::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PracticeExam-Debug-576390fa29a0b37dfcb3.json",
+					"name" : "PracticeExam",
 					"projectIndex" : 0
 				},
 				{
