@@ -51,6 +51,68 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 
 build edit_cache: phony CMakeFiles/edit_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target studentWork
+
+
+#############################################
+# Order-only phony target for studentWork
+
+build cmake_object_order_depends_target_studentWork: phony || CMakeFiles/studentWork.dir
+
+build CMakeFiles/studentWork.dir/studentWork.cpp.o: CXX_COMPILER__studentWork_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/studentWork.cpp || cmake_object_order_depends_target_studentWork
+  DEP_FILE = CMakeFiles/studentWork.dir/studentWork.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/studentWork.dir
+  OBJECT_FILE_DIR = CMakeFiles/studentWork.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target studentWork
+
+
+#############################################
+# Link the executable studentWork
+
+build studentWork: CXX_EXECUTABLE_LINKER__studentWork_Debug CMakeFiles/studentWork.dir/studentWork.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/studentWork.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = studentWork
+  TARGET_PDB = studentWork.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target diamond
+
+
+#############################################
+# Order-only phony target for diamond
+
+build cmake_object_order_depends_target_diamond: phony || CMakeFiles/diamond.dir
+
+build CMakeFiles/diamond.dir/diamond.cpp.o: CXX_COMPILER__diamond_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/diamond.cpp || cmake_object_order_depends_target_diamond
+  DEP_FILE = CMakeFiles/diamond.dir/diamond.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/diamond.dir
+  OBJECT_FILE_DIR = CMakeFiles/diamond.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target diamond
+
+
+#############################################
+# Link the executable diamond
+
+build diamond: CXX_EXECUTABLE_LINKER__diamond_Debug CMakeFiles/diamond.dir/diamond.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/diamond.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = diamond
+  TARGET_PDB = diamond.dbg
+
 
 #############################################
 # Utility command for rebuild_cache
@@ -446,7 +508,7 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 iterativeStatements
+build all: phony studentWork diamond PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 iterativeStatements
 
 # =============================================================================
 # Built-in targets
