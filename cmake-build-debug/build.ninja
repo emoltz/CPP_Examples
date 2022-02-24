@@ -52,6 +52,37 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target HW6
+
+
+#############################################
+# Order-only phony target for HW6
+
+build cmake_object_order_depends_target_HW6: phony || CMakeFiles/HW6.dir
+
+build CMakeFiles/HW6.dir/HW6.cpp.o: CXX_COMPILER__HW6_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/HW6.cpp || cmake_object_order_depends_target_HW6
+  DEP_FILE = CMakeFiles/HW6.dir/HW6.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/HW6.dir
+  OBJECT_FILE_DIR = CMakeFiles/HW6.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target HW6
+
+
+#############################################
+# Link the executable HW6
+
+build HW6: CXX_EXECUTABLE_LINKER__HW6_Debug CMakeFiles/HW6.dir/HW6.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/HW6.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = HW6
+  TARGET_PDB = HW6.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target studentWork
 
 
@@ -405,6 +436,37 @@ build hw1_testing: CXX_EXECUTABLE_LINKER__hw1_testing_Debug CMakeFiles/hw1_testi
   TARGET_PDB = hw1_testing.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target pointers
+
+
+#############################################
+# Order-only phony target for pointers
+
+build cmake_object_order_depends_target_pointers: phony || CMakeFiles/pointers.dir
+
+build CMakeFiles/pointers.dir/pointers.cpp.o: CXX_COMPILER__pointers_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/pointers.cpp || cmake_object_order_depends_target_pointers
+  DEP_FILE = CMakeFiles/pointers.dir/pointers.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/pointers.dir
+  OBJECT_FILE_DIR = CMakeFiles/pointers.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pointers
+
+
+#############################################
+# Link the executable pointers
+
+build pointers: CXX_EXECUTABLE_LINKER__pointers_Debug CMakeFiles/pointers.dir/pointers.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/pointers.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = pointers
+  TARGET_PDB = pointers.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target es5541_hw2_q4
 
 
@@ -508,7 +570,7 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony studentWork diamond PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing es5541_hw2_q4 test1 iterativeStatements
+build all: phony HW6 studentWork diamond PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing pointers es5541_hw2_q4 test1 iterativeStatements
 
 # =============================================================================
 # Built-in targets
