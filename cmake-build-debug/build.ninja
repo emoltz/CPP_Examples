@@ -52,6 +52,37 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target pointersExample
+
+
+#############################################
+# Order-only phony target for pointersExample
+
+build cmake_object_order_depends_target_pointersExample: phony || CMakeFiles/pointersExample.dir
+
+build CMakeFiles/pointersExample.dir/pointersExample.cpp.o: CXX_COMPILER__pointersExample_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/pointersExample.cpp || cmake_object_order_depends_target_pointersExample
+  DEP_FILE = CMakeFiles/pointersExample.dir/pointersExample.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/pointersExample.dir
+  OBJECT_FILE_DIR = CMakeFiles/pointersExample.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pointersExample
+
+
+#############################################
+# Link the executable pointersExample
+
+build pointersExample: CXX_EXECUTABLE_LINKER__pointersExample_Debug CMakeFiles/pointersExample.dir/pointersExample.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk
+  OBJECT_DIR = CMakeFiles/pointersExample.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = pointersExample
+  TARGET_PDB = pointersExample.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target HW6
 
 
@@ -570,7 +601,7 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony HW6 studentWork diamond PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing pointers es5541_hw2_q4 test1 iterativeStatements
+build all: phony pointersExample HW6 studentWork diamond PracticeExam hw4 hw3_q1 cpp InsertionSort DeBug hw3 AlgoTesting hw1_testing pointers es5541_hw2_q4 test1 iterativeStatements
 
 # =============================================================================
 # Built-in targets

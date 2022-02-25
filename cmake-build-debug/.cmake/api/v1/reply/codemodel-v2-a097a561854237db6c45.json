@@ -30,7 +30,8 @@
 						12,
 						13,
 						14,
-						15
+						15,
+						16
 					]
 				}
 			],
@@ -60,7 +61,8 @@
 						12,
 						13,
 						14,
-						15
+						15,
+						16
 					]
 				}
 			],
@@ -162,6 +164,13 @@
 					"id" : "pointers::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-pointers-Debug-2b03022af28be778cd72.json",
 					"name" : "pointers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointersExample::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointersExample-Debug-c80eb71fb1f951596c6f.json",
+					"name" : "pointersExample",
 					"projectIndex" : 0
 				},
 				{
