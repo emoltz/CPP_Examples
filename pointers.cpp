@@ -3,9 +3,7 @@
 using namespace std;
 
 void pointers1(){
-
     //some experimentation
-
     int x, n;
     int* pointer;
     x = 5;
@@ -30,9 +28,11 @@ void pointers2(){
     // a pointer is an INTEGER that stores a MEMORY ADDRESS
     // Think of a delivery man. He needs the address of the house because that's the location of the house.
     // What's the point of pointers? They can allocate memory dynamically. This means the program will be faster and use less memory. They can also be used to do some useful things within functions.
-    //
+    // In the mailman analogy, you would be able to change the address a package goes to while the mailman is out delivering stuff.
     int var = 8;
     int* pointer = &var;
+
+
     cout << *pointer << endl;
     var = 10;
     cout << *pointer; //see?? These are LINKED!
@@ -135,6 +135,10 @@ void useCase3(){
     cout << *pointer;
 }
 
+int myFunction2(int *p){
+
+}
+
 void vectors(){
     vector<int> myVector;
     myVector = {1, 2, 3, 4, 5};
@@ -185,5 +189,6 @@ int main (){
 //    pointers4();
 //    pointerToReference();
     vectors();
+
     return 0;
 }
