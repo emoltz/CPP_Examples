@@ -41,6 +41,37 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target hw11review
+
+
+#############################################
+# Order-only phony target for hw11review
+
+build cmake_object_order_depends_target_hw11review: phony || CMakeFiles/hw11review.dir
+
+build CMakeFiles/hw11review.dir/hw11review.cpp.o: CXX_COMPILER__hw11review_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw11review.cpp || cmake_object_order_depends_target_hw11review
+  DEP_FILE = CMakeFiles/hw11review.dir/hw11review.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/hw11review.dir
+  OBJECT_FILE_DIR = CMakeFiles/hw11review.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target hw11review
+
+
+#############################################
+# Link the executable hw11review
+
+build hw11review: CXX_EXECUTABLE_LINKER__hw11review_Debug CMakeFiles/hw11review.dir/hw11review.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/hw11review.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = hw11review
+  TARGET_PDB = hw11review.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target JumpIt
 
 
@@ -911,7 +942,7 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
 
-build all: phony JumpIt examQ6 HW8_4 pointersExample HW6 studentWork diamond PracticeExam hw4 hw3_q1 stringthings cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 studentwork2 iterativeStatements
+build all: phony hw11review JumpIt examQ6 HW8_4 pointersExample HW6 studentWork diamond PracticeExam hw4 hw3_q1 stringthings cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 studentwork2 iterativeStatements
 
 # =============================================================================
 # Built-in targets
