@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/cmake-build-debug/
+cmake_ninja_workdir = /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target hw11review
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/c
 
 build cmake_object_order_depends_target_hw11review: phony || CMakeFiles/hw11review.dir
 
-build CMakeFiles/hw11review.dir/hw11review.cpp.o: CXX_COMPILER__hw11review_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw11review.cpp || cmake_object_order_depends_target_hw11review
+build CMakeFiles/hw11review.dir/hw11review.cpp.o: CXX_COMPILER__hw11review_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/hw11review.cpp || cmake_object_order_depends_target_hw11review
   DEP_FILE = CMakeFiles/hw11review.dir/hw11review.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/hw11review.dir
@@ -80,7 +80,7 @@ build hw11review: CXX_EXECUTABLE_LINKER__hw11review_Debug CMakeFiles/hw11review.
 
 build cmake_object_order_depends_target_JumpIt: phony || CMakeFiles/JumpIt.dir
 
-build CMakeFiles/JumpIt.dir/JumpIt.cpp.o: CXX_COMPILER__JumpIt_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/JumpIt.cpp || cmake_object_order_depends_target_JumpIt
+build CMakeFiles/JumpIt.dir/JumpIt.cpp.o: CXX_COMPILER__JumpIt_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/JumpIt.cpp || cmake_object_order_depends_target_JumpIt
   DEP_FILE = CMakeFiles/JumpIt.dir/JumpIt.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/JumpIt.dir
@@ -111,7 +111,7 @@ build JumpIt: CXX_EXECUTABLE_LINKER__JumpIt_Debug CMakeFiles/JumpIt.dir/JumpIt.c
 
 build cmake_object_order_depends_target_examQ6: phony || CMakeFiles/examQ6.dir
 
-build CMakeFiles/examQ6.dir/examQ6.cpp.o: CXX_COMPILER__examQ6_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/examQ6.cpp || cmake_object_order_depends_target_examQ6
+build CMakeFiles/examQ6.dir/examQ6.cpp.o: CXX_COMPILER__examQ6_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/examQ6.cpp || cmake_object_order_depends_target_examQ6
   DEP_FILE = CMakeFiles/examQ6.dir/examQ6.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/examQ6.dir
@@ -142,7 +142,7 @@ build examQ6: CXX_EXECUTABLE_LINKER__examQ6_Debug CMakeFiles/examQ6.dir/examQ6.c
 
 build cmake_object_order_depends_target_HW8_4: phony || CMakeFiles/HW8_4.dir
 
-build CMakeFiles/HW8_4.dir/HW8_4.cpp.o: CXX_COMPILER__HW8_4_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/HW8_4.cpp || cmake_object_order_depends_target_HW8_4
+build CMakeFiles/HW8_4.dir/HW8_4.cpp.o: CXX_COMPILER__HW8_4_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/HW8_4.cpp || cmake_object_order_depends_target_HW8_4
   DEP_FILE = CMakeFiles/HW8_4.dir/HW8_4.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/HW8_4.dir
@@ -169,7 +169,7 @@ build HW8_4: CXX_EXECUTABLE_LINKER__HW8_4_Debug CMakeFiles/HW8_4.dir/HW8_4.cpp.o
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -184,7 +184,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_pointersExample: phony || CMakeFiles/pointersExample.dir
 
-build CMakeFiles/pointersExample.dir/pointersExample.cpp.o: CXX_COMPILER__pointersExample_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/pointersExample.cpp || cmake_object_order_depends_target_pointersExample
+build CMakeFiles/pointersExample.dir/pointersExample.cpp.o: CXX_COMPILER__pointersExample_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/pointersExample.cpp || cmake_object_order_depends_target_pointersExample
   DEP_FILE = CMakeFiles/pointersExample.dir/pointersExample.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/pointersExample.dir
@@ -215,7 +215,7 @@ build pointersExample: CXX_EXECUTABLE_LINKER__pointersExample_Debug CMakeFiles/p
 
 build cmake_object_order_depends_target_HW6: phony || CMakeFiles/HW6.dir
 
-build CMakeFiles/HW6.dir/HW6.cpp.o: CXX_COMPILER__HW6_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/HW6.cpp || cmake_object_order_depends_target_HW6
+build CMakeFiles/HW6.dir/HW6.cpp.o: CXX_COMPILER__HW6_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/HW6.cpp || cmake_object_order_depends_target_HW6
   DEP_FILE = CMakeFiles/HW6.dir/HW6.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/HW6.dir
@@ -238,6 +238,37 @@ build HW6: CXX_EXECUTABLE_LINKER__HW6_Debug CMakeFiles/HW6.dir/HW6.cpp.o
   TARGET_PDB = HW6.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target OOP
+
+
+#############################################
+# Order-only phony target for OOP
+
+build cmake_object_order_depends_target_OOP: phony || CMakeFiles/OOP.dir
+
+build CMakeFiles/OOP.dir/OOP.cpp.o: CXX_COMPILER__OOP_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP.cpp || cmake_object_order_depends_target_OOP
+  DEP_FILE = CMakeFiles/OOP.dir/OOP.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/OOP.dir
+  OBJECT_FILE_DIR = CMakeFiles/OOP.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target OOP
+
+
+#############################################
+# Link the executable OOP
+
+build OOP: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/OOP.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/OOP.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = OOP
+  TARGET_PDB = OOP.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target studentWork
 
 
@@ -246,7 +277,7 @@ build HW6: CXX_EXECUTABLE_LINKER__HW6_Debug CMakeFiles/HW6.dir/HW6.cpp.o
 
 build cmake_object_order_depends_target_studentWork: phony || CMakeFiles/studentWork.dir
 
-build CMakeFiles/studentWork.dir/studentWork.cpp.o: CXX_COMPILER__studentWork_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/studentWork.cpp || cmake_object_order_depends_target_studentWork
+build CMakeFiles/studentWork.dir/studentWork.cpp.o: CXX_COMPILER__studentWork_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/studentWork.cpp || cmake_object_order_depends_target_studentWork
   DEP_FILE = CMakeFiles/studentWork.dir/studentWork.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/studentWork.dir
@@ -277,7 +308,7 @@ build studentWork: CXX_EXECUTABLE_LINKER__studentWork_Debug CMakeFiles/studentWo
 
 build cmake_object_order_depends_target_diamond: phony || CMakeFiles/diamond.dir
 
-build CMakeFiles/diamond.dir/diamond.cpp.o: CXX_COMPILER__diamond_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/diamond.cpp || cmake_object_order_depends_target_diamond
+build CMakeFiles/diamond.dir/diamond.cpp.o: CXX_COMPILER__diamond_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/diamond.cpp || cmake_object_order_depends_target_diamond
   DEP_FILE = CMakeFiles/diamond.dir/diamond.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/diamond.dir
@@ -308,7 +339,7 @@ build diamond: CXX_EXECUTABLE_LINKER__diamond_Debug CMakeFiles/diamond.dir/diamo
 
 build cmake_object_order_depends_target_PracticeExam: phony || CMakeFiles/PracticeExam.dir
 
-build CMakeFiles/PracticeExam.dir/PracticeExam.cpp.o: CXX_COMPILER__PracticeExam_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/PracticeExam.cpp || cmake_object_order_depends_target_PracticeExam
+build CMakeFiles/PracticeExam.dir/PracticeExam.cpp.o: CXX_COMPILER__PracticeExam_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/PracticeExam.cpp || cmake_object_order_depends_target_PracticeExam
   DEP_FILE = CMakeFiles/PracticeExam.dir/PracticeExam.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/PracticeExam.dir
@@ -339,7 +370,7 @@ build PracticeExam: CXX_EXECUTABLE_LINKER__PracticeExam_Debug CMakeFiles/Practic
 
 build cmake_object_order_depends_target_hw4: phony || CMakeFiles/hw4.dir
 
-build CMakeFiles/hw4.dir/hw4.cpp.o: CXX_COMPILER__hw4_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw4.cpp || cmake_object_order_depends_target_hw4
+build CMakeFiles/hw4.dir/hw4.cpp.o: CXX_COMPILER__hw4_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/hw4.cpp || cmake_object_order_depends_target_hw4
   DEP_FILE = CMakeFiles/hw4.dir/hw4.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/hw4.dir
@@ -370,7 +401,7 @@ build hw4: CXX_EXECUTABLE_LINKER__hw4_Debug CMakeFiles/hw4.dir/hw4.cpp.o
 
 build cmake_object_order_depends_target_hw3_q1: phony || CMakeFiles/hw3_q1.dir
 
-build CMakeFiles/hw3_q1.dir/hw3_q1.cpp.o: CXX_COMPILER__hw3_q1_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw3_q1.cpp || cmake_object_order_depends_target_hw3_q1
+build CMakeFiles/hw3_q1.dir/hw3_q1.cpp.o: CXX_COMPILER__hw3_q1_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/hw3_q1.cpp || cmake_object_order_depends_target_hw3_q1
   DEP_FILE = CMakeFiles/hw3_q1.dir/hw3_q1.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/hw3_q1.dir
@@ -401,7 +432,7 @@ build hw3_q1: CXX_EXECUTABLE_LINKER__hw3_q1_Debug CMakeFiles/hw3_q1.dir/hw3_q1.c
 
 build cmake_object_order_depends_target_stringthings: phony || CMakeFiles/stringthings.dir
 
-build CMakeFiles/stringthings.dir/stringthings.cpp.o: CXX_COMPILER__stringthings_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/stringthings.cpp || cmake_object_order_depends_target_stringthings
+build CMakeFiles/stringthings.dir/stringthings.cpp.o: CXX_COMPILER__stringthings_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/stringthings.cpp || cmake_object_order_depends_target_stringthings
   DEP_FILE = CMakeFiles/stringthings.dir/stringthings.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/stringthings.dir
@@ -432,7 +463,7 @@ build stringthings: CXX_EXECUTABLE_LINKER__stringthings_Debug CMakeFiles/stringt
 
 build cmake_object_order_depends_target_cpp: phony || CMakeFiles/cpp.dir
 
-build CMakeFiles/cpp.dir/main.cpp.o: CXX_COMPILER__cpp_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/main.cpp || cmake_object_order_depends_target_cpp
+build CMakeFiles/cpp.dir/main.cpp.o: CXX_COMPILER__cpp_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/main.cpp || cmake_object_order_depends_target_cpp
   DEP_FILE = CMakeFiles/cpp.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/cpp.dir
@@ -463,7 +494,7 @@ build cpp: CXX_EXECUTABLE_LINKER__cpp_Debug CMakeFiles/cpp.dir/main.cpp.o
 
 build cmake_object_order_depends_target_studentWork17: phony || CMakeFiles/studentWork17.dir
 
-build CMakeFiles/studentWork17.dir/studentWork17.cpp.o: CXX_COMPILER__studentWork17_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/studentWork17.cpp || cmake_object_order_depends_target_studentWork17
+build CMakeFiles/studentWork17.dir/studentWork17.cpp.o: CXX_COMPILER__studentWork17_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/studentWork17.cpp || cmake_object_order_depends_target_studentWork17
   DEP_FILE = CMakeFiles/studentWork17.dir/studentWork17.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/studentWork17.dir
@@ -494,7 +525,7 @@ build studentWork17: CXX_EXECUTABLE_LINKER__studentWork17_Debug CMakeFiles/stude
 
 build cmake_object_order_depends_target_pointers: phony || CMakeFiles/pointers.dir
 
-build CMakeFiles/pointers.dir/pointers.cpp.o: CXX_COMPILER__pointers_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/pointers.cpp || cmake_object_order_depends_target_pointers
+build CMakeFiles/pointers.dir/pointers.cpp.o: CXX_COMPILER__pointers_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/pointers.cpp || cmake_object_order_depends_target_pointers
   DEP_FILE = CMakeFiles/pointers.dir/pointers.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/pointers.dir
@@ -525,7 +556,7 @@ build pointers: CXX_EXECUTABLE_LINKER__pointers_Debug CMakeFiles/pointers.dir/po
 
 build cmake_object_order_depends_target_InsertionSort: phony || CMakeFiles/InsertionSort.dir
 
-build CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o: CXX_COMPILER__InsertionSort_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/InsertionSort.cpp || cmake_object_order_depends_target_InsertionSort
+build CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o: CXX_COMPILER__InsertionSort_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/InsertionSort.cpp || cmake_object_order_depends_target_InsertionSort
   DEP_FILE = CMakeFiles/InsertionSort.dir/InsertionSort.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/InsertionSort.dir
@@ -552,7 +583,7 @@ build InsertionSort: CXX_EXECUTABLE_LINKER__InsertionSort_Debug CMakeFiles/Inser
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp" -B"/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug"
+  COMMAND = cd "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug" && "/Users/ethanshafranmoltz/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp" -B"/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -568,7 +599,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_Strings: phony || CMakeFiles/Strings.dir
 
-build CMakeFiles/Strings.dir/Strings.cpp.o: CXX_COMPILER__Strings_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/Strings.cpp || cmake_object_order_depends_target_Strings
+build CMakeFiles/Strings.dir/Strings.cpp.o: CXX_COMPILER__Strings_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/Strings.cpp || cmake_object_order_depends_target_Strings
   DEP_FILE = CMakeFiles/Strings.dir/Strings.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/Strings.dir
@@ -599,7 +630,7 @@ build Strings: CXX_EXECUTABLE_LINKER__Strings_Debug CMakeFiles/Strings.dir/Strin
 
 build cmake_object_order_depends_target_morePointers: phony || CMakeFiles/morePointers.dir
 
-build CMakeFiles/morePointers.dir/morePointers.cpp.o: CXX_COMPILER__morePointers_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/morePointers.cpp || cmake_object_order_depends_target_morePointers
+build CMakeFiles/morePointers.dir/morePointers.cpp.o: CXX_COMPILER__morePointers_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/morePointers.cpp || cmake_object_order_depends_target_morePointers
   DEP_FILE = CMakeFiles/morePointers.dir/morePointers.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/morePointers.dir
@@ -630,7 +661,7 @@ build morePointers: CXX_EXECUTABLE_LINKER__morePointers_Debug CMakeFiles/morePoi
 
 build cmake_object_order_depends_target_DeBug: phony || CMakeFiles/DeBug.dir
 
-build CMakeFiles/DeBug.dir/DeBug.cpp.o: CXX_COMPILER__DeBug_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/DeBug.cpp || cmake_object_order_depends_target_DeBug
+build CMakeFiles/DeBug.dir/DeBug.cpp.o: CXX_COMPILER__DeBug_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/DeBug.cpp || cmake_object_order_depends_target_DeBug
   DEP_FILE = CMakeFiles/DeBug.dir/DeBug.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/DeBug.dir
@@ -661,7 +692,7 @@ build DeBug: CXX_EXECUTABLE_LINKER__DeBug_Debug CMakeFiles/DeBug.dir/DeBug.cpp.o
 
 build cmake_object_order_depends_target_practice2: phony || CMakeFiles/practice2.dir
 
-build CMakeFiles/practice2.dir/practice2.cpp.o: CXX_COMPILER__practice2_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/practice2.cpp || cmake_object_order_depends_target_practice2
+build CMakeFiles/practice2.dir/practice2.cpp.o: CXX_COMPILER__practice2_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/practice2.cpp || cmake_object_order_depends_target_practice2
   DEP_FILE = CMakeFiles/practice2.dir/practice2.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/practice2.dir
@@ -692,7 +723,7 @@ build practice2: CXX_EXECUTABLE_LINKER__practice2_Debug CMakeFiles/practice2.dir
 
 build cmake_object_order_depends_target_hw3: phony || CMakeFiles/hw3.dir
 
-build CMakeFiles/hw3.dir/hw3.cpp.o: CXX_COMPILER__hw3_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw3.cpp || cmake_object_order_depends_target_hw3
+build CMakeFiles/hw3.dir/hw3.cpp.o: CXX_COMPILER__hw3_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/hw3.cpp || cmake_object_order_depends_target_hw3
   DEP_FILE = CMakeFiles/hw3.dir/hw3.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/hw3.dir
@@ -723,7 +754,7 @@ build hw3: CXX_EXECUTABLE_LINKER__hw3_Debug CMakeFiles/hw3.dir/hw3.cpp.o
 
 build cmake_object_order_depends_target_AlgoTesting: phony || CMakeFiles/AlgoTesting.dir
 
-build CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o: CXX_COMPILER__AlgoTesting_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/AlgoTesting.cpp || cmake_object_order_depends_target_AlgoTesting
+build CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o: CXX_COMPILER__AlgoTesting_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/AlgoTesting.cpp || cmake_object_order_depends_target_AlgoTesting
   DEP_FILE = CMakeFiles/AlgoTesting.dir/AlgoTesting.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/AlgoTesting.dir
@@ -754,7 +785,7 @@ build AlgoTesting: CXX_EXECUTABLE_LINKER__AlgoTesting_Debug CMakeFiles/AlgoTesti
 
 build cmake_object_order_depends_target_hw1_testing: phony || CMakeFiles/hw1_testing.dir
 
-build CMakeFiles/hw1_testing.dir/hw1_testing.cpp.o: CXX_COMPILER__hw1_testing_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/hw1_testing.cpp || cmake_object_order_depends_target_hw1_testing
+build CMakeFiles/hw1_testing.dir/hw1_testing.cpp.o: CXX_COMPILER__hw1_testing_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/hw1_testing.cpp || cmake_object_order_depends_target_hw1_testing
   DEP_FILE = CMakeFiles/hw1_testing.dir/hw1_testing.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/hw1_testing.dir
@@ -816,7 +847,7 @@ build es5541_hw2_q4: CXX_EXECUTABLE_LINKER__es5541_hw2_q4_Debug CMakeFiles/es554
 
 build cmake_object_order_depends_target_testing: phony || CMakeFiles/testing.dir
 
-build CMakeFiles/testing.dir/testing.cpp.o: CXX_COMPILER__testing_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/testing.cpp || cmake_object_order_depends_target_testing
+build CMakeFiles/testing.dir/testing.cpp.o: CXX_COMPILER__testing_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/testing.cpp || cmake_object_order_depends_target_testing
   DEP_FILE = CMakeFiles/testing.dir/testing.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/testing.dir
@@ -847,7 +878,7 @@ build testing: CXX_EXECUTABLE_LINKER__testing_Debug CMakeFiles/testing.dir/testi
 
 build cmake_object_order_depends_target_test1: phony || CMakeFiles/test1.dir
 
-build CMakeFiles/test1.dir/test1.cpp.o: CXX_COMPILER__test1_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/test1.cpp || cmake_object_order_depends_target_test1
+build CMakeFiles/test1.dir/test1.cpp.o: CXX_COMPILER__test1_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/test1.cpp || cmake_object_order_depends_target_test1
   DEP_FILE = CMakeFiles/test1.dir/test1.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/test1.dir
@@ -870,6 +901,37 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
   TARGET_PDB = test1.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target scratch
+
+
+#############################################
+# Order-only phony target for scratch
+
+build cmake_object_order_depends_target_scratch: phony || CMakeFiles/scratch.dir
+
+build CMakeFiles/scratch.dir/scratch.cpp.o: CXX_COMPILER__scratch_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/scratch.cpp || cmake_object_order_depends_target_scratch
+  DEP_FILE = CMakeFiles/scratch.dir/scratch.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/scratch.dir
+  OBJECT_FILE_DIR = CMakeFiles/scratch.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target scratch
+
+
+#############################################
+# Link the executable scratch
+
+build scratch: CXX_EXECUTABLE_LINKER__scratch_Debug CMakeFiles/scratch.dir/scratch.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/scratch.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = scratch
+  TARGET_PDB = scratch.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target studentwork2
 
 
@@ -878,7 +940,7 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
 
 build cmake_object_order_depends_target_studentwork2: phony || CMakeFiles/studentwork2.dir
 
-build CMakeFiles/studentwork2.dir/studentwork2.cpp.o: CXX_COMPILER__studentwork2_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/studentwork2.cpp || cmake_object_order_depends_target_studentwork2
+build CMakeFiles/studentwork2.dir/studentwork2.cpp.o: CXX_COMPILER__studentwork2_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/studentwork2.cpp || cmake_object_order_depends_target_studentwork2
   DEP_FILE = CMakeFiles/studentwork2.dir/studentwork2.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/studentwork2.dir
@@ -909,7 +971,7 @@ build studentwork2: CXX_EXECUTABLE_LINKER__studentwork2_Debug CMakeFiles/student
 
 build cmake_object_order_depends_target_iterativeStatements: phony || CMakeFiles/iterativeStatements.dir
 
-build CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o: CXX_COMPILER__iterativeStatements_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Code/cpp/iterativeStatements.cpp || cmake_object_order_depends_target_iterativeStatements
+build CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o: CXX_COMPILER__iterativeStatements_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/iterativeStatements.cpp || cmake_object_order_depends_target_iterativeStatements
   DEP_FILE = CMakeFiles/iterativeStatements.dir/iterativeStatements.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/iterativeStatements.dir
@@ -940,9 +1002,9 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 # =============================================================================
 
 #############################################
-# Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Code/cpp/cmake-build-debug
+# Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony hw11review JumpIt examQ6 HW8_4 pointersExample HW6 studentWork diamond PracticeExam hw4 hw3_q1 stringthings cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 studentwork2 iterativeStatements
+build all: phony hw11review JumpIt examQ6 HW8_4 pointersExample HW6 OOP studentWork diamond PracticeExam hw4 hw3_q1 stringthings cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 scratch studentwork2 iterativeStatements
 
 # =============================================================================
 # Built-in targets
