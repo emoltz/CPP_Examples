@@ -1,20 +1,48 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-typedef class myClass{
+class myClass{
+public:
+    int j;
     int i;
-    double f;
-} myClassTypeDefName;
+    myClass(){
+        j = 0;
+        i = 0;
+    }
 
-class AnotherClass{
-    int i;
-    double f;
 };
-typedef AnotherClass AnotherClassTypeDef;
+
+bool comparator(const myClass& lsh, const myClass& rhs){
+    return lsh.j < rhs.j;
+}
 
 int main(){
+    vector<myClass> myVector;
+    myClass one;
+    one.j = 3;
+    one.i = 1;
+    myClass two;
+    two.j = 5;
+    two.i = 1;
+    myClass three;
+    three.j = 2;
+    three.i = 1;
 
-    myClassTypeDefName f;
+    myVector.push_back(one);
+    myVector.push_back(two);
+    myVector.push_back(three);
+
+
+    std::sort(myVector.begin(), myVector.end(), &comparator);
+
+    for (auto & i : myVector) {
+        cout << i.j << endl;
+    }
+
+
+
+
 
     return 0;
 }

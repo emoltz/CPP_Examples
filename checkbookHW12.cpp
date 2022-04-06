@@ -9,6 +9,7 @@ private:
 public:
     Money() : all_cents(0){};
     void input(istream& ins);
+
     void output (ostream& outs) const;
     friend Money operator + (const Money& amount1, const Money& amount2);
     friend Money operator - (const Money& amount1, const Money& amount2);
@@ -20,9 +21,62 @@ public:
 };
 
 
+class Check{
+private:
+    int _checkNum{};
+    bool _checkCashed = false;
+public:
+    Money _checkAmount{};
+    Check(){}
+    Check(int checkNum, bool checkCashed){
+        _checkNum = checkNum;
+        _checkCashed = checkCashed;
+
+    }
+
+    int setCheckNumber(int newNumber){
+        _checkNum = newNumber;return _checkNum;
+    }
+    int getCheckNumber()const {
+        return _checkNum;
+    }
+    void setCheckCashed(string& answer){
+        if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y"){
+            this->_checkCashed = true;
+        }
+        else if (answer == "No" || answer == "no" || answer == "N" || answer == "n"){
+            this->_checkCashed = false;
+        }
+        else{
+            cout << "ERROR: Please use yes or no (or y or n) to denote whether the check has been cashed. Common man. Don't be weird. Now you have to start over. :(" << endl;
+            exit(1);
+        }
+    }
+    bool getCheckCashed() const{
+        return _checkCashed;
+    }
+    friend bool operator < (const Check& check1, const Check& check2){
+        if (check1.getCheckNumber() < check2.getCheckNumber()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
 
 int main(){
+    //read in from the console: check num, amount, cashed
+    cout << "Input check num, amount$, and whether it is cashed: " << endl;
+    Check* userChecks;
+    userChecks = new Check;
 
+
+    //output: total number of checks cahsed, total of deposits, what the new balance should be, and how this differs from what the bank says the new balance is.
+    //Also, two lists of checks: checks cashed since last time you balanced the checkbook and checks still not cashed. Print in sorted order.
+
+
+    return 0;
 }
 
 void Money::input(istream &ins) {
