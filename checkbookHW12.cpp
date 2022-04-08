@@ -20,7 +20,6 @@ public:
     friend ostream& operator << (ostream& outs, const Money& amount); // output values of type Money
 };
 
-
 class Check{
 private:
     int _checkNum{};
@@ -31,12 +30,12 @@ public:
     Check(int checkNum, bool checkCashed){
         _checkNum = checkNum;
         _checkCashed = checkCashed;
-
     }
 
     int setCheckNumber(int newNumber){
         _checkNum = newNumber;return _checkNum;
     }
+
     int getCheckNumber()const {
         return _checkNum;
     }
@@ -52,9 +51,11 @@ public:
             exit(1);
         }
     }
+
     bool getCheckCashed() const{
         return _checkCashed;
     }
+
     friend bool operator < (const Check& check1, const Check& check2){
         if (check1.getCheckNumber() < check2.getCheckNumber()){
             return true;

@@ -963,6 +963,37 @@ build test1: CXX_EXECUTABLE_LINKER__test1_Debug CMakeFiles/test1.dir/test1.cpp.o
   TARGET_PDB = test1.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target scratch2
+
+
+#############################################
+# Order-only phony target for scratch2
+
+build cmake_object_order_depends_target_scratch2: phony || CMakeFiles/scratch2.dir
+
+build CMakeFiles/scratch2.dir/scratch2.cpp.o: CXX_COMPILER__scratch2_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/scratch2.cpp || cmake_object_order_depends_target_scratch2
+  DEP_FILE = CMakeFiles/scratch2.dir/scratch2.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/scratch2.dir
+  OBJECT_FILE_DIR = CMakeFiles/scratch2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target scratch2
+
+
+#############################################
+# Link the executable scratch2
+
+build scratch2: CXX_EXECUTABLE_LINKER__scratch2_Debug CMakeFiles/scratch2.dir/scratch2.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/scratch2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = scratch2
+  TARGET_PDB = scratch2.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target scratch
 
 
@@ -1066,7 +1097,7 @@ build iterativeStatements: CXX_EXECUTABLE_LINKER__iterativeStatements_Debug CMak
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony hw11review JumpIt examQ6 HW8_4 pointersExample checks1 HW6 OOP studentWork diamond PracticeExam hw4 hw3_q1 stringthings employeeHW cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 scratch studentwork2 iterativeStatements
+build all: phony hw11review JumpIt examQ6 HW8_4 pointersExample checks1 HW6 OOP studentWork diamond PracticeExam hw4 hw3_q1 stringthings employeeHW cpp studentWork17 pointers InsertionSort Strings morePointers DeBug practice2 hw3 AlgoTesting hw1_testing es5541_hw2_q4 testing test1 scratch2 scratch studentwork2 iterativeStatements
 
 # =============================================================================
 # Built-in targets
