@@ -47,7 +47,8 @@
 						29,
 						30,
 						31,
-						32
+						32,
+						33
 					]
 				}
 			],
@@ -94,7 +95,8 @@
 						29,
 						30,
 						31,
-						32
+						32,
+						33
 					]
 				}
 			],
@@ -112,6 +114,13 @@
 					"id" : "DeBug::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-DeBug-Debug-ed4fb3552c0e7d3f11d9.json",
 					"name" : "DeBug",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DoodlebugRef01::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DoodlebugRef01-Debug-4759f7075c145cec0c28.json",
+					"name" : "DoodlebugRef01",
 					"projectIndex" : 0
 				},
 				{

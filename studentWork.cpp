@@ -1,111 +1,287 @@
 #include <iostream>
+#include <vector>
 #include <cstdlib>
 #include <cctype>
-#include <vector>
+#include <algorithm>
 using namespace std;
 
-// Constants
-const int CASHED = 1;
-const int NOT_CASHED = 0;
-const int FINISHED = -1;
-
-//---------------------------------------------------MONEY CLASS-----------------------------------------------------//
-class Money
-{
+class Money {
 private:
     long all_cents;
-
 public:
-    // Constructors
-    Money() : all_cents(0) {}
-    Money(long dollars) : all_cents(dollars * 100){}
-    Money(long dollars, int cents)
-    {
-        if(dollars*cents < 0)
-        {
-            cout << "Invalid input for dollars and cents." << endl;
-            exit(1);
-        }
-        all_cents = dollars * 100 + cents;
-    }
-    double get_value() const
-    {
-        return (all_cents*0.01);
-    }
-    // Overloading Operators
-    friend Money operator +(const Money& amount1, const Money& amount2)
-    {
-        Money temp;
-        temp.all_cents = amount1.all_cents + amount2.all_cents;
-        return temp;
-    }
-    friend Money operator -(const Money& amount1, const Money& amount2)
-    {
-        Money temp;
-        temp.all_cents = amount1.all_cents - amount2.all_cents;
-        return temp;
-    }
-    friend Money operator -(const Money& amount)
-    {
-        Money temp;
-        temp.all_cents = -amount.all_cents;
-        return temp;
-    }
-    friend bool operator ==(const Money& amount1, const Money& amount2)
-    {
-        return (amount1.all_cents == amount2.all_cents);
-    }
-    friend bool operator <(const Money& amount1, const Money& amount2)
-    {
-        return (amount1.all_cents < amount2.all_cents);
-    }
-    friend istream& operator >>(istream& ins, Money& amount);
-    friend ostream& operator <<(ostream& outs, const Money& amount);
+    Money(long dollars, int cents);
+    Money(long dollars): all_cents(dollars * 100) {};
+    Money() :all_cents(0) {};
+    friend Money operator+(const Money& amount1, const Money& amount2);
+    friend Money operator-(const Money& amount1, const Money& amount2);
+    friend bool operator==(const Money& amount1, const Money& amount2);
+    double get_value() { return all_cents * 0.01; };
+    friend istream& operator>>(istream& ins, Money& amount);
+    friend ostream& operator<<(ostream& outs, const Money& amount);
 };
-int digit_to_int(char c)
-{
-    return ( static_cast<int>(c) - static_cast<int>('0') );
+
+class Check {
+private:
+    int number;
+    bool is_cashed;
+    Money amount;
+public:
+    Check() :number(0), is_cashed(false), amount(Money()) {};
+    Check(int number, bool is_cashed, long dollars, int cents) :number(number), is_cashed(is_cashed), amount(Money(dollars, cents)) {};
+    Check(int number, bool is_cashed, long dollars) :number(number), is_cashed(is_cashed), amount(Money(dollars)) {};
+    int get_number() { return number; };
+    bool get_is_cashed() { return is_cashed; };
+    Money get_amount() { return amount; };
+    void set_number(int number) { this->number = number; };
+    void set_is_cashed(bool is_cashed) { this->is_cashed = is_cashed; };
+    void set_amount(const Money& amount) { this->amount = amount; };
+    friend bool operator<(const Check& lhs, const Check& rhs);
+    friend istream& operator>>(istream& ins, Check& check);
+    friend ostream& operator<<(ostream& outs, const Check& check);
+};
+
+int digit_to_int(char c);
+Money get_cashed_check_total(Check* checks, int num);
+Money get_uncashed_check_total(Check* checks, int num);
+Money get_deposits_total(Money* money, int num);
+vector<Check> get_list_cashed_checks(Check* checks, int num);
+vector<Check> get_list_uncashed_checks(Check* checks, int num);
+void print_checks(vector<Check> checks);
+
+int main() {
+    Money starting_balance, balance_from_bank;
+    int amount_of_deposits, amount_of_checks;
+
+    cout << "Enter starting balance (format: $##.##): ";
+    cin >> starting_balance;
+    cout << endl;
+
+    cout << "Enter the balance you received from the bank (format: $##.##): ";
+    cin >> balance_from_bank;
+    cout << endl;
+
+    cout << "Please enter the amount of deposits you have: ";
+    cin >> amount_of_deposits;
+    cout << endl;
+
+    cout << "Please enter each deposit, all on a separate line (press enter)" << endl;
+    cout << "Do so in the following format: $##.##" << endl;
+    cout << "Example: $6.20" << endl;
+    cout << "------------------------" << endl;
+
+    Money* deposits = new Money[amount_of_deposits];
+
+    for (int i = 0; i < amount_of_deposits; i++) {
+        cin >> deposits[i];
+    }
+
+    cout << endl;
+
+    cout << "Please enter the amount of checks you have: ";
+    cin >> amount_of_checks;
+    cout << endl;
+
+    cout << "Please enter each check, all on a separate line (press enter)" << endl;
+    cout << "For example, in the case of 2 checks" << endl;
+    cout << "503 $302.00 1" << endl;
+    cout << "400 $120.00 0" << endl;
+    cout << "Do so in the following format (each info separated by space): " << endl;
+    cout << "Check# Amount IsCashed" << endl;
+    cout << "IsCashed should be either 0 or 1" << endl;
+    cout << "------------------------" << endl;
+
+
+    Check* checks = new Check[amount_of_checks];
+
+    for (int i = 0; i < amount_of_checks; i++) {
+        cin >> checks[i];
+    }
+
+    Money cashed_checks_total, uncashed_checks_total, deposits_total;
+    cashed_checks_total = get_cashed_check_total(checks, amount_of_checks);
+    uncashed_checks_total = get_uncashed_check_total(checks, amount_of_checks);
+    deposits_total = get_deposits_total(deposits, amount_of_deposits);
+
+    cout << "------------------------" << endl;
+    cout << "Checkbook and Bank Info" << endl;
+    cout << "------------------------" << endl;
+    cout << "Cashed Checks Total: " << cashed_checks_total << endl;
+    cout << "Deposits Total: " << deposits_total << endl << endl;
+
+    Money new_bank_balance = starting_balance + deposits_total - cashed_checks_total;
+    cout << "New Bank Balance: " << new_bank_balance << endl;
+
+    Money new_checkbook_balance = starting_balance + deposits_total - (cashed_checks_total + uncashed_checks_total);
+    cout << "New Checkbook Balance: " << new_checkbook_balance << endl;
+
+    Money bank_checkbook_balance = new_bank_balance - new_checkbook_balance;
+    cout << "Bank-Checkbook Difference: " << bank_checkbook_balance << endl << endl;
+
+    Money actual_difference = new_bank_balance - balance_from_bank;
+
+    if (actual_difference.get_value() != 0) {
+        cout << "Your bank calculated its balance incorrectly!!!" << endl;
+        cout << "Bank\'s Given-Actual Difference: " << actual_difference << endl;
+    } else {
+        cout << "Bank Balance Checks out!  No Difference!" << endl;
+    }
+
+    cout << endl;
+
+    cout << "----------------------" << endl;
+    cout << "List of Cashed Checks:" << endl;
+    cout << "----------------------" << endl;
+
+    vector<Check> cashed_checks = get_list_cashed_checks(checks, amount_of_checks);
+    sort(cashed_checks.begin(), cashed_checks.end());
+    print_checks(cashed_checks);
+
+    cout << "----------------------" << endl;
+    cout << "List of Uncashed Checks:" << endl;
+    cout << "----------------------" << endl;
+
+    vector<Check> uncashed_checks = get_list_uncashed_checks(checks, amount_of_checks);
+    sort(uncashed_checks.begin(), uncashed_checks.end());
+    print_checks(uncashed_checks);
+
+    delete[] deposits;
+    delete[] checks;
+
+    return 0;
 }
-istream& operator >>(istream& ins, Money& amount)
-{
-    char one_char, decimal_point, digit1, digit2;   // digits for the amount of cents
+
+int digit_to_int(char c) {
+    if (c < '0' || c > '9') {
+        return 0;
+    }
+    return c - '0';
+}
+
+Money get_cashed_check_total(Check* checks, int num) {
+    Money tmp;
+
+    for (int i = 0; i < num; i++) {
+        if (checks[i].get_is_cashed()) {
+            tmp = tmp + checks[i].get_amount();
+        }
+    }
+
+    return tmp;
+}
+
+Money get_uncashed_check_total(Check* checks, int num) {
+    Money tmp;
+
+    for (int i = 0; i < num; i++) {
+        if (!checks[i].get_is_cashed()) {
+            tmp = tmp + checks[i].get_amount();
+        }
+    }
+
+    return tmp;
+}
+
+Money get_deposits_total(Money* money, int num) {
+    Money tmp;
+
+    for (int i = 0; i < num; i++) {
+        tmp = tmp + money[i].get_value();
+    }
+
+    return tmp;
+}
+
+vector<Check> get_list_cashed_checks(Check* checks, int num) {
+    vector<Check> cashed_checks;
+
+    for (int i = 0; i < num; i++) {
+        if (checks[i].get_is_cashed()) {
+            cashed_checks.push_back(checks[i]);
+        }
+    }
+
+    return cashed_checks;
+}
+
+vector<Check> get_list_uncashed_checks(Check* checks, int num) {
+    vector<Check> uncashed_checks;
+
+    for (int i = 0; i < num; i++) {
+        if (!checks[i].get_is_cashed()) {
+            uncashed_checks.push_back(checks[i]);
+        }
+    }
+
+    return uncashed_checks;
+}
+
+void print_checks(vector<Check> checks) {
+    for (int i = 0; i < checks.size(); i++) {
+        cout << checks[i] << endl;
+    }
+}
+
+Money operator+(const Money& amount1, const Money& amount2) {
+    Money tmp;
+    tmp.all_cents = amount1.all_cents + amount2.all_cents;
+    return tmp;
+}
+
+Money operator-(const Money& amount1, const Money& amount2) {
+    Money tmp;
+    tmp.all_cents = amount1.all_cents - amount2.all_cents;
+    return tmp;
+}
+
+bool operator==(const Money& amount1, const Money& amount2) {
+    return amount1.all_cents == amount2.all_cents;
+}
+
+Money::Money(long dollars, int cents) {
+    if (dollars * cents < 0) {
+        cout << "Dollars and Cents must both be negative or positive" << endl;
+        cout << "Exiting program..." << endl;
+        exit(1);
+    }
+    all_cents = dollars * 100 + cents;
+}
+
+istream& operator>> (istream& ins, Money& amount) {
+    char one_char, decimal_point, digit1, digit2;
+
     long dollars;
     int cents;
-    bool negative;  // set to true if input is negative
+    bool negative;
 
     ins >> one_char;
-    if (one_char == '-')
-    {
+    if (one_char == ' ') {
         negative = true;
-        ins >> one_char;    // read '$'
-    }
-    else
+        ins >> one_char;
+    } else {
         negative = false;
-    // if input is legal, then one_char == '$'
+    }
 
     ins >> dollars >> decimal_point >> digit1 >> digit2;
 
-    if ( one_char != '$' || decimal_point != '.'
-         || !isdigit(digit1) || !isdigit(digit2) )
-    {
-        cout << "Error illegal form for money input\n";
+    if (one_char != '$' || decimal_point != '.' || !isdigit(digit1) || !isdigit(digit2)) {
+        cout << "Error illegal form for money input" << endl;
+        cout << "Exiting program..." << endl;
         exit(1);
     }
+    cents = digit_to_int(digit1) * 10 + digit_to_int(digit2);
 
-    cents = digit_to_int(digit1)*10 + digit_to_int(digit2);
-
-    amount.all_cents = dollars*100 + cents;
+    amount.all_cents = dollars * 100 + cents;
     if (negative)
         amount.all_cents = -amount.all_cents;
 
     return ins;
 }
-ostream& operator <<(ostream& outs, const Money& amount)
-{
+
+ostream& operator<< (ostream& outs, const Money& amount) {
     long positive_cents, dollars, cents;
     positive_cents = labs(amount.all_cents);
-    dollars = positive_cents/100;
-    cents = positive_cents%100;
+    dollars = positive_cents / 100;
+    cents = positive_cents % 100;
 
     if (amount.all_cents < 0)
         outs << "-$" << dollars << '.';
@@ -114,223 +290,38 @@ ostream& operator <<(ostream& outs, const Money& amount)
 
     if (cents < 10)
         outs << '0';
+
     outs << cents;
 
     return outs;
 }
-//---------------------------------------------------MONEY CLASS-----------------------------------------------------//
 
-//---------------------------------------------------CHECK CLASS-----------------------------------------------------//
-class Check
-{
-private:
-    int m_number;
-    Money m_amount;
-    bool m_is_cashed;
-
-public:
-    // Constructors
-    Check()
-        : m_number(0), m_amount(0.00), m_is_cashed(0) {}
-
-    Check(int check_number, Money check_amount, bool check_cashed)
-        : m_number(check_number), m_amount(check_amount), m_is_cashed(check_cashed) {}
-
-    // Can't get the money objects to work right
-    // Use this constructor for creating objects for calculating balances as a work around
-    Check(Money check_amount)
-            : m_number(0), m_amount(check_amount), m_is_cashed(0) {}
-
-    // Get Methods
-    const int& GetCheckNumber() const
-    { return m_number; }
-
-    const Money& GetAmount() const
-    { return m_amount; }
-
-    const bool& GetIsCashed() const
-    { return m_is_cashed; }
-
-    // Overloading Operators
-    friend Check operator +(const Check& amount1, const Check& amount2)
-    {
-        Check temp;
-        temp.m_amount = amount1.m_amount + amount2.m_amount;
-        return temp;
-    }
-    friend Check operator -(const Check& amount1, const Check& amount2)
-    {
-        Check temp;
-        temp.m_amount = amount1.m_amount - amount2.m_amount;
-        return temp;
-    }
-};
-
-ostream& operator <<(ostream& stream, const Check& info)
-{
-    stream << "Check #" << info.GetCheckNumber() << " | " << "Amount: " << info.GetAmount();
-    return stream;
+bool operator<(const Check& lhs, const Check& rhs) {
+    return lhs.number < rhs.number;
 }
 
-bool Checks_less_than(Check const &l, Check const &r)
-{ return l.GetCheckNumber() < r.GetCheckNumber(); }
-//---------------------------------------------------CHECK CLASS-----------------------------------------------------//
+istream& operator>>(istream& ins, Check& check) {
+    int is_cashed;
+    ins >> check.number >> check.amount >> is_cashed;
 
-//------------------------------------------------------MAIN---------------------------------------------------------//
-
-// Function Prototypes
-vector<Check> get_deposits_list();
-vector<Check> get_checks_list();
-double get_deposits_total(const vector<double> &deposits);
-
-int main()
-{
-    /* Note to TA: Could not get money objects working correctly
-     * Needed to create a work-around using check objects
-     * which results in some extra code lines. */
-
-    // Get current balance from user
-    double current_balance = 0;
-    cout << "Please enter current balance: ";
-    cin >> current_balance;
-    Check old_balance(current_balance);
-    cout << old_balance.GetAmount() << endl;
-    cout << endl;
-
-    // Get bank balance from user
-    double bank_balance = 0;
-    cout << "Please enter the balance you received from the bank: ";
-    cin >> bank_balance;
-    Check banks_balance(bank_balance);
-    cout << banks_balance.GetAmount() << endl;
-    cout << endl;
-//    cout << "Bank Balance: " << bank_balance << endl;
-//    cout << endl;
-
-    // Get deposits from user
-    vector<Check> deposits_list = get_deposits_list();
-
-    // Get deposits deposits total
-    Check deposits_total;
-    for (const Check& d : deposits_list)
-    {
-        deposits_total = d + deposits_total;
+    if (is_cashed == 1) {
+        check.is_cashed = true;
+    } else if (is_cashed == 0) {
+        check.is_cashed = false;
+    } else {
+        cout << "Invalid entry for whether check is cashed or not" << endl;
+        cout << "Exiting program..." << endl;
+        exit(1);
     }
-    cout << "Deposits Total: ";
-    cout << deposits_total.GetAmount() << endl;
-    cout << endl;
 
-    // Get checks from user
-    vector<Check> checks_list = get_checks_list();
-
-    // Sort checks by check number
-    sort(checks_list.begin(), checks_list.end(), &Checks_less_than);
-
-    // Get cashed checks total
-    cout << "-------------------" << endl;
-    cout << "Cashed Checks List:" << endl;
-    cout << "-------------------" << endl;
-    Check cashed_checks_total;
-    for (Check c : checks_list)
-    {
-        if (c.GetIsCashed())
-        {
-            cout << c << endl;
-            cashed_checks_total = c + cashed_checks_total;
-        }
-    }
-    cout << endl;
-    cout << "Cashed Checks Total: ";
-    cout << cashed_checks_total.GetAmount() << endl;
-    cout << endl;
-
-    // Get uncashed checks total
-    cout << "---------------------" << endl;
-    cout << "Uncashed Checks List:" << endl;
-    cout << "---------------------" << endl;
-    Check uncashed_checks_total;
-    for (Check c : checks_list)
-    {
-        if (!c.GetIsCashed())
-        {
-            cout << c << endl;
-            uncashed_checks_total = c + uncashed_checks_total;
-        }
-    }
-    cout << endl;
-    cout << "Uncashed Checks Total: ";
-    cout << uncashed_checks_total.GetAmount() << endl;
-    cout << endl;
-
-    // Get all checks total
-    Check all_checks_total;
-    all_checks_total = cashed_checks_total + uncashed_checks_total;
-    cout << "----------------------------" << endl;
-    cout << "Total Amount of All Checks: " << endl;
-    cout << all_checks_total.GetAmount() << endl;
-
-
-    // Get new bank balance
-    cout << "------------------" << endl;
-    cout << "New Bank Balance: " << endl;
-    Check new_account_balance;
-    new_account_balance = old_balance + deposits_total - all_checks_total;
-    cout << new_account_balance.GetAmount() << endl;
-
-//    cout << "New Checkbook Balance: " << endl;
-//    cout << "Bank & Checkbook Difference: " << endl;
-
-    return 0;
+    return ins;
 }
 
-vector<Check> get_deposits_list()
-{
-    vector <Check> deposits;
-    double curr_deposit = 0;
-    bool finish_deposits = false;
-    cout << "Please enter the deposits (enter -1 to finish):" << endl;
-    while(!finish_deposits)
-    {
-        cin >> curr_deposit;
-        if (curr_deposit == FINISHED)
-        {
-            finish_deposits = true;
-        }
-        else
-        {
-            deposits.push_back({0,curr_deposit,0});
-        }
-    }
-    return deposits;
+ostream& operator<<(ostream& outs, const Check& check) {
+    cout << "Check Number: " << check.number << endl;
+    cout << "Check Amount: " << check.amount << endl;
+    cout << "Is Check Cashed: " << check.is_cashed << endl;
+
+    return outs;
 }
 
-vector<Check> get_checks_list()
-{
-    vector<Check> checks;
-    int curr_check_num = 0;
-    double curr_check_amount = 0;
-    bool curr_is_cashed = false;
-    bool finish_checks = false;
-    cout << "Please enter the details for each check:" << endl;
-    while(!finish_checks)
-    {
-        cout << "Check # (or -1 to finish): ";
-        cin >> curr_check_num;
-        if (curr_check_num == FINISHED)
-        {
-            finish_checks = true;
-        }
-        else
-        {
-            cout << "Check Amount: ";
-            cin >> curr_check_amount;
-            cout << "Was Check Cashed (i.e. 1 = Yes, 0 = No)?: ";
-            cin >> curr_is_cashed;
-            checks.push_back(   // IF I ENTER $ the PROGRAM RUNS AN INFINITE LOOP
-                    {curr_check_num, curr_check_amount, curr_is_cashed});
-            cout << endl;
-        }
-    }
-    cout << endl;
-    return checks;
-}
