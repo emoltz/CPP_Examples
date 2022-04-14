@@ -51,7 +51,7 @@ public:
 protected:
     bool moved;
     int x, y;
-    int breedTicks;
+    int breedCounter;
     Environment *world;
 };
 
@@ -152,7 +152,7 @@ void Environment::moveOneTimeStep() {
 //Organism default constructor
 Organism::Organism() {
     moved = false;
-    breedTicks = 0;
+    breedCounter = 0;
     world = nullptr;
     x = 0;
     y = 0;
@@ -161,7 +161,7 @@ Organism::Organism() {
 //Constructor
 Organism::Organism(Environment *world, int x, int y) {
     moved = false;
-    breedTicks = 0;
+    breedCounter = 0;
     this->world = world;
     this->x = x;
     this->y = y;
@@ -227,9 +227,9 @@ int Ant::getType() {return ANT_NUM;}
 
 //breed - attempt to breed ant if ant has survived 3 ticks
 void Ant::breed() {
-    breedTicks++;
-    if (breedTicks == ANT_BREED_TIME) {
-        breedTicks = 0;
+    breedCounter++;
+    if (breedCounter == ANT_BREED_TIME) {
+        breedCounter = 0;
 
         //Try to breed up, down, left, and right
         if ((y > 0) && (world->getOrganismAt(x, y - 1) == nullptr)) {
@@ -248,7 +248,9 @@ void Ant::breed() {
 }
 
 //starve - Always returns false since ants can't starve
-bool Ant::starve() {return false;}
+bool Ant::starve() {
+    return false;
+}
 
 class Doodle : public Organism {
     friend class Environment;
@@ -357,9 +359,9 @@ int Doodle::getType() {return DOODLE_NUM;}
 
 //breed - attempt to breed doodle bug after 8 ticks
 void Doodle::breed() {
-    breedTicks++;
-    if (breedTicks == DOODLE_BREED_TIME) {
-        breedTicks = 0;
+    breedCounter++;
+    if (breedCounter == DOODLE_BREED_TIME) {
+        breedCounter = 0;
         //Try to breed up, down, left, right
         if ((y > 0) && (world->getOrganismAt(x, y - 1) == nullptr)) {
             new Doodle(world, x, y - 1);

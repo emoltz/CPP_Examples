@@ -1094,6 +1094,37 @@ build DoodlebugRef01: CXX_EXECUTABLE_LINKER__DoodlebugRef01_Debug CMakeFiles/Doo
   TARGET_FILE = DoodlebugRef01
   TARGET_PDB = DoodlebugRef01.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target DoodlebugRef_Ethan
+
+
+#############################################
+# Order-only phony target for DoodlebugRef_Ethan
+
+build cmake_object_order_depends_target_DoodlebugRef_Ethan: phony || CMakeFiles/DoodlebugRef_Ethan.dir
+
+build CMakeFiles/DoodlebugRef_Ethan.dir/DoodlebugRef_Ethan.cpp.o: CXX_COMPILER__DoodlebugRef_Ethan_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/DoodlebugRef_Ethan.cpp || cmake_object_order_depends_target_DoodlebugRef_Ethan
+  DEP_FILE = CMakeFiles/DoodlebugRef_Ethan.dir/DoodlebugRef_Ethan.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/DoodlebugRef_Ethan.dir
+  OBJECT_FILE_DIR = CMakeFiles/DoodlebugRef_Ethan.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target DoodlebugRef_Ethan
+
+
+#############################################
+# Link the executable DoodlebugRef_Ethan
+
+build DoodlebugRef_Ethan: CXX_EXECUTABLE_LINKER__DoodlebugRef_Ethan_Debug CMakeFiles/DoodlebugRef_Ethan.dir/DoodlebugRef_Ethan.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/DoodlebugRef_Ethan.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = DoodlebugRef_Ethan
+  TARGET_PDB = DoodlebugRef_Ethan.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -1128,7 +1159,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01
+build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01 DoodlebugRef_Ethan
 
 # =============================================================================
 # Built-in targets
