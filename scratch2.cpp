@@ -1,60 +1,58 @@
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
+int main() {
 
-class myClass{
-public:
-    int j;
-    int i;
-    myClass(){
-        j = 0;
-        i = 0;
+    int inputInteger;
+    int counter = 0;
+    vector<int> input;
+    vector<int> numberOfDigits;
+    vector<int> mostFrequent;
+    int mostFrequentDigit = 0;
+    int holder;
+
+    cout << "Please enter a non-empty sequence of positive integers. Each\ninteger should be in a separate line.\nTo indicate the end of the input, enter 0 in one line.\n";
+    do
+    {
+        cin >> inputInteger;
+        if (inputInteger != 0) {
+            input.push_back(inputInteger);
+            counter++;
+        }
+
+    } while (inputInteger != 0);
+
+    for (int i = 0; i < counter; i++)
+    {
+        mostFrequent.push_back(0);
+        numberOfDigits.push_back(0);
+        holder = input[i];
+        while (holder != 0) {
+            holder /= 10;
+            numberOfDigits[i] = numberOfDigits[i] + 1;
+        }
     }
-};
+    for (int i = 0; i < counter; i++)
+    {
+        mostFrequent[numberOfDigits[i]]++ ;
+    }
+    for (int i = 0; i < counter; i++) {
+        if (mostFrequent[i] > mostFrequentDigit) {
+            mostFrequentDigit = i;
+        }
+    }
 
-vector<myClass> sortClasses(vector<myClass> myVector){
-    vector<myClass> sorted;
-    //Bubble Sort O(n^2)
-    //Insertion Sort O(n^2)
-    //Selection O(n^2)
+    cout << "The most frequent length is: " << mostFrequentDigit << endl;
+    cout << "The positive integers with the most frequent length are:\n";
 
+    for (int i = 0; i < counter; i++) {
+        if (numberOfDigits[i] == mostFrequentDigit){
+            cout << input[i] << ", ";
+        }
 
-    return sorted;
+    }
+    cout << "\b\b";
 
-}
-
-bool comparator(const myClass& lhs, const myClass& rhs){
-    return lhs.j < rhs.j;
-}
-
-int main(){
-
-    vector<myClass> myVector;
-    myClass one;
-    one.j = 3;
-    one.i = 1;
-    myClass two;
-    two.j = 5;
-    two.i = 1;
-    myClass three;
-    three.j = 2;
-    three.i = 1;
-
-    myVector.push_back(one);
-    myVector.push_back(two);
-    myVector.push_back(three);
-
-    // sort( BEGIN, END, COMPARATOR)
-
-    vector<myClass> sortedArray = sortClasses(myVector);
-
-
-    sort(myVector.begin(), myVector.end(), &comparator);
-
-
-
-
-
-    return 0;
 }

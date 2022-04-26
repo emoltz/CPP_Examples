@@ -1125,6 +1125,68 @@ build DoodlebugRef_Ethan: CXX_EXECUTABLE_LINKER__DoodlebugRef_Ethan_Debug CMakeF
   TARGET_FILE = DoodlebugRef_Ethan
   TARGET_PDB = DoodlebugRef_Ethan.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target DoodlebugRef02
+
+
+#############################################
+# Order-only phony target for DoodlebugRef02
+
+build cmake_object_order_depends_target_DoodlebugRef02: phony || CMakeFiles/DoodlebugRef02.dir
+
+build CMakeFiles/DoodlebugRef02.dir/DoodlebugRef02.cpp.o: CXX_COMPILER__DoodlebugRef02_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/DoodlebugRef02.cpp || cmake_object_order_depends_target_DoodlebugRef02
+  DEP_FILE = CMakeFiles/DoodlebugRef02.dir/DoodlebugRef02.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/DoodlebugRef02.dir
+  OBJECT_FILE_DIR = CMakeFiles/DoodlebugRef02.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target DoodlebugRef02
+
+
+#############################################
+# Link the executable DoodlebugRef02
+
+build DoodlebugRef02: CXX_EXECUTABLE_LINKER__DoodlebugRef02_Debug CMakeFiles/DoodlebugRef02.dir/DoodlebugRef02.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/DoodlebugRef02.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = DoodlebugRef02
+  TARGET_PDB = DoodlebugRef02.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target readin
+
+
+#############################################
+# Order-only phony target for readin
+
+build cmake_object_order_depends_target_readin: phony || CMakeFiles/readin.dir
+
+build CMakeFiles/readin.dir/readin.cpp.o: CXX_COMPILER__readin_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/readin.cpp || cmake_object_order_depends_target_readin
+  DEP_FILE = CMakeFiles/readin.dir/readin.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/readin.dir
+  OBJECT_FILE_DIR = CMakeFiles/readin.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target readin
+
+
+#############################################
+# Link the executable readin
+
+build readin: CXX_EXECUTABLE_LINKER__readin_Debug CMakeFiles/readin.dir/readin.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/readin.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = readin
+  TARGET_PDB = readin.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -1159,7 +1221,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01 DoodlebugRef_Ethan
+build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01 DoodlebugRef_Ethan DoodlebugRef02 readin
 
 # =============================================================================
 # Built-in targets
