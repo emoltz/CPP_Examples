@@ -35,5 +35,6 @@
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/DoodlebugRef_Ethan.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/DoodlebugRef02.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/readin.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/stacks.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

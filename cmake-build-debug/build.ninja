@@ -1187,6 +1187,37 @@ build readin: CXX_EXECUTABLE_LINKER__readin_Debug CMakeFiles/readin.dir/readin.c
   TARGET_FILE = readin
   TARGET_PDB = readin.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target stacks
+
+
+#############################################
+# Order-only phony target for stacks
+
+build cmake_object_order_depends_target_stacks: phony || CMakeFiles/stacks.dir
+
+build CMakeFiles/stacks.dir/stacks.cpp.o: CXX_COMPILER__stacks_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/stacks.cpp || cmake_object_order_depends_target_stacks
+  DEP_FILE = CMakeFiles/stacks.dir/stacks.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/stacks.dir
+  OBJECT_FILE_DIR = CMakeFiles/stacks.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target stacks
+
+
+#############################################
+# Link the executable stacks
+
+build stacks: CXX_EXECUTABLE_LINKER__stacks_Debug CMakeFiles/stacks.dir/stacks.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/stacks.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = stacks
+  TARGET_PDB = stacks.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -1221,7 +1252,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01 DoodlebugRef_Ethan DoodlebugRef02 readin
+build all: phony cpp test1 es5541_hw2_q4 hw1_testing AlgoTesting hw3 DeBug hw3_q1 InsertionSort hw4 iterativeStatements PracticeExam diamond studentWork HW6 pointers pointersExample practice2 studentWork17 studentwork2 HW8_4 Strings stringthings examQ6 morePointers testing JumpIt hw11review OOP scratch employeeHW checks1 scratch2 DoodlebugRef01 DoodlebugRef_Ethan DoodlebugRef02 readin stacks
 
 # =============================================================================
 # Built-in targets

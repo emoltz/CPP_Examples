@@ -17,7 +17,7 @@ public:
     };
     Pet(int age, int weight, string name) : _age {age}, _weight {weight}, _name {name}{};
 
-    // Let us create a series of operators which we will then use to display data and what not.
+    // Let us create a series of operators which we will then use to display _data and what not.
     // First let us define the out stream/printing operator.
     friend ostream& operator<<(ostream& os, const Pet& pet);
     // What about the "in" operator?

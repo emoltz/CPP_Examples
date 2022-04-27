@@ -28,7 +28,7 @@ public:
     Money();
     //Initializes the object so its value represents $0.00.
     double get_value() const;
-    //Returns the amount of money recorded in the data portion of the calling
+    //Returns the amount of money recorded in the _data portion of the calling
     //object.
     friend istream& operator >>(istream& ins, Money& amount);
     //Overloads the >> operator so it can be used to input values of type

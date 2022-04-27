@@ -10,7 +10,7 @@ int main(){
 
 
     out_stream.open("output.txt");
-    in_stream.open("data.txt");
+    in_stream.open("_data.txt");
     if (!in_stream){
         cout << "Fail";
     }

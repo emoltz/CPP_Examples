@@ -1,360 +1,564 @@
+//
+//  era8366_hw13_v3.cpp
+//  Tandon_Bridge_Program
+//
+//  Created by Eric Acerno on 4/15/22.
+/*  CH15# 9: The goal for this Project is to create a simple two-dimensional predator-prey simulation.
+
+In this simulation the prey are ants and the predators are doodlebugs:
+    -These critters live in a world composed of a 20 × 20 grid of cells.
+    -Only one critter may occupy a cell at a time.
+    -The grid is enclosed, so a critter is not allowed to move off the edges of the world.
+    -Time is simulated in time steps. Each critter performs some action every time step.
+
+A) The ants behave according to the following model:
+    -Move. Every time step, randomly try to move up, down, left, or right. If the neighboring cell in the selected direction is occupied or would move the ant off the grid, then the ant stays in the current cell.
+
+    -Breed. If an ant survives for three time steps, then at the end of the time step (that is; after moving) the ant will breed. This is simulated by creat-ing a new ant in an adjacent (up, down, left, or right) cell that is empty. If there is no empty cell available, then no breeding occurs. Once an off-spring is produced, an ant cannot produce an offspring until three more time steps have elapsed.
+
+B) The doodlebugs behave according to the following model:
+    -Move. Every time step, if there is an adjacent ant (up, down, left, or right), then the doodlebug will move to that cell and eat the ant. Otherwise, the doodlebug moves according to the same rules as the ant. Note that a doodlebug cannot eat other doodlebugs.
+
+    -Breed. If a doodlebug survives for eight time steps, then at the end of the time step it will spawn off a new doodlebug in the same manner as the ant.
+
+    -Starve. If a doodlebug has not eaten an ant within the last three time steps, then at the end of the third time step it will starve and die. The doodlebug should then be removed from the grid of cells.
+
+    -During one turn, all the doodlebugs should move before the ants do.
+ -------------------------------------------------------------------------
+ 1) Write a program to implement this simulation and draw the world using ASCII characters of “o” for an ant and “X” for a doodlebug or "-" for an empty space.
+ 2) Create a class named Organism that encapsulates basic _data common to both ants and doodlebugs.
+        2a) This class should have a virtual function named move that is defined in the derived classes of Ant and Doodlebug.
+        2b) You may need additional _data structures to keep track of which critters have moved.
+
+ 3) Initialize the world with 5 doodlebugs and 100 ants. After each time step, prompt the user to press Enter to move to the _next time step. You should see a cyclical pattern between the population of predators and prey, although random perturbations may lead to the elimination of one or both species.
+
+ */
+
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
+const int GRID_SIZE = 20;
+//int representing moves in all directions
+const int UP = 1;
+const int DOWN = 2;
+const int LEFT = 3;
+const int RIGHT = 4;
+//number of time steps to breed or starve (depending on organism type)
+const int DOODLE_BREED_TIME = 8;
+const int ANT_BREED_TIME = 3;
+const int STARVE_TIME = 3;
 
-using namespace std;
-
-class Grid;
-class Organism;
-class Ant;
-class Doodlebug;
-
-const int gridSize = 20;
-const int startAntCount = 100;
-const int startDoodlebugCount = 5;
-const int antBreedTime = 3;
-const int doodlebugBreedTime = 8;
-const int doodlebugStarveTime = 3;
-const int upMove = 1;
-const int downMove = 2;
-const int leftMove = 3;
-const int rightMove = 4;
-const char antChar = 'O';
-const char doodlebugChar = 'X';
-const int antType = 1;
-const int doodlebugType = 2;
-
-int getRandomNumber(int start, int end);
-
-class Grid{
-    friend class Organism;
-    friend class Ant;
-    friend class Doodlebug;
-
-public:
-    Grid();
-    void initializeGrid();
-    void displayGrid();
-    void moveOneTimeStep();
-
-private:
-    Organism* grid[gridSize][gridSize];
-    int count;
-};
-
+//parent class to Ant and DoodleBug
 class Organism{
-public:
-    Organism(): xCoordinate(0), yCoordinate(0), stepsUntilBreed(0), gridptr(nullptr), count(0){};
-    Organism(int x, int y, Grid* gridptr);
-    virtual void move();
-    virtual void breed() = 0;
-    virtual int getType() = 0;
-    virtual bool shouldStarve() {return false;}
-    void pickRandomMove(vector<int> possibleMoves, int& xCoord, int& yCoord) const;
-    void updateCoordinateFromMove(int &x, int &y, int move) const;
-    bool isValidCoordinate(int x, int y) const;
-    vector<int> findSurroundingEmptyCells(int x, int y) const;
-
-protected:
-    int xCoordinate;
-    int yCoordinate;
-    int stepsUntilBreed;
-    int count;
-    Grid* gridptr;
-};
-
-class Ant: public Organism{
-public:
-    Ant(): Organism(){};
-    Ant(int x, int y, Grid* gridptr);
-    int getType(){return antType;}
-    void breed();
-    bool shouldStarve() {return false;}
-};
-
-class Doodlebug: public Organism{
-public:
-    Doodlebug(): Organism(){}
-    Doodlebug(int x, int y, Grid* gridptr);
-    void move();
-    void breed();
-    bool shouldStarve(){return stepsUntilBreed == 0;}
-    int getType(){return doodlebugType;}
-    vector<int> findSurroundingAnts(int x, int y) const;
-
 private:
-    int stepsUntilStarve;
+    int x_axis;
+    int y_axis;
+    int _id;
+    int time_step;
+    bool hasMoved;
+    bool hasEaten;
+public:
+    Organism(int x, int y, int id){
+        this->x_axis = x;
+        this->y_axis = y;
+        this->_id = id;
+        this->time_step = 0;
+        this->hasMoved = false;
+        this->hasEaten = false;
+    }
+    virtual ~Organism() {}
+
+    virtual void move(Organism* grid[GRID_SIZE][GRID_SIZE]) = 0;
+
+    virtual char getType()const = 0;
+
+    virtual void breed(Organism* grid[GRID_SIZE][GRID_SIZE], int&) = 0;
+
+    virtual void starve(Organism* grid[GRID_SIZE][GRID_SIZE]){
+        if (getTimeStep() == STARVE_TIME){
+            if (getIfEaten() == false){
+                delete grid[get_X_axis()][get_Y_axis()];
+                grid[get_X_axis()][get_Y_axis()] = NULL;
+            }
+        }
+    }
+
+    // Getters
+    int get_X_axis()const{
+        return x_axis;
+    }
+
+    int get_Y_axis()const{
+        return y_axis;
+    }
+
+    int getID()const{
+        return _id;
+    }
+
+    int getTimeStep()const{
+        return time_step;
+    }
+
+    bool getIfMoved()const{
+        return hasMoved;
+    }
+
+    bool getIfEaten()const{
+        return hasEaten;
+    }
+
+    // Setters
+
+    void setX(int x){
+        this-> x_axis = x;
+    }
+
+    void setY(int y){
+        this-> y_axis = y;
+    }
+
+    void setID(int id){ this->_id = id; }
+
+    void setTimeStep(int timeStep){
+        this->time_step = timeStep;
+    }
+
+    void setIfMoved(bool condition){
+        this->hasMoved = condition;
+    }
+
+    void setIfEaten(bool condition){
+        this->hasEaten = condition;
+    }
 };
 
-Grid::Grid(){
-    count = 0;
-    // Create an empty grid with null pointers
-    for (int i = 0; i < gridSize; i++)
-    {
-        for (int j = 0; j < gridSize; j++)
-        {
-            grid[i][j] = nullptr;
+//child class DoodleBug of parent Organism
+class DoodleBug: public Organism{
+private:
+    char d_type;
+public:
+    DoodleBug(int x, int y, int id): Organism(x, y, id), d_type('X') {}
+    virtual ~DoodleBug(){}
+    char getType()const{
+        return d_type;
+    }
+    void move(Organism* grid[GRID_SIZE][GRID_SIZE]);
+    void breed(Organism* grid[GRID_SIZE][GRID_SIZE], int& dbID);
+    void starve(Organism* grid[GRID_SIZE][GRID_SIZE]);
+};
+/*
+ Function for randomizing a direction where Up=1, Down=2, Left=3, Right=4
+ */
+void DoodleBug::move(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    int direction = rand() % 4 + 1;
+    //DIRECTIONS FOR RANDOMIZED MOVE UP (1); limit to row 1 (X axis, index 0)
+    if (direction == UP && get_X_axis() - 1 >= 0 && getIfMoved() == false){
+        if (grid[get_X_axis() - 1][get_Y_axis()] == NULL){
+            int newX = get_X_axis() - 1;
+            int newY = get_Y_axis();
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+    }
+    //DIRECTIONS FOR RANDOMIZED MOVE DOWN (2); limit to row 20 (X axis, index 19)
+    if (direction == DOWN && get_X_axis()+1 <= GRID_SIZE - 1 && getIfMoved() == false){
+        if (grid[get_X_axis()+1][get_Y_axis()] == NULL){
+            int newX = get_X_axis()+1;
+            int newY = get_Y_axis();
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+        else if (grid[get_X_axis() + 1][get_Y_axis()]->getType() == 'o'){
+            int newX = get_X_axis() + 1;
+            int newY = get_Y_axis();
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            delete grid[newX][newY];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            grid[newX][newY]->setIfEaten(true);
+            return;
+        }
+    }
+    //DIRECTIONS FOR RANDOMIZED MOVE LEFT (3); limit to column 1 (Y axis, index 0)
+    if (direction == LEFT && get_Y_axis()-1 >= 0 && getIfMoved() == false){
+        if (grid[get_X_axis()][get_Y_axis()-1] == NULL){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()-1;
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            delete grid[newX][newY];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+        else if (grid[get_X_axis()][get_Y_axis()-1]->getType() == 'o'){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()-1;
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            delete grid[newX][newY];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            grid[newX][newY]->setIfEaten(true);
+            return;
+        }
+    }
+    //DIRECTIONS FOR RANDOMIZED MOVE RIGHT (4); limit to column 20 (Y axis, index 19)
+    if (direction == RIGHT && get_Y_axis() + 1 <= GRID_SIZE - 1 && getIfMoved() == false){
+        if (grid[get_X_axis()][get_Y_axis()+1] == NULL){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()+1;
+            int newID = getID();
+            int newTimeStep = getTimeStep() + 1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+        else if (grid[get_X_axis()][get_Y_axis() + 1]->getType() == 'o'){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()+1;
+            int newID = getID();
+            int newTimeStep = getTimeStep() + 1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            delete grid[newX][newY];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new DoodleBug(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            grid[newX][newY]->setIfEaten(true);
+            return;
+        }
+    }
+    setTimeStep(getTimeStep()+1);
+}
+//Depending on direction, make sure it's valid direction
+//swap x, y with that point by creating a new object and marking that object as one that moved
+void DoodleBug::breed(Organism* grid[GRID_SIZE][GRID_SIZE], int& dbID){
+    setTimeStep(0);
+    if (grid[get_X_axis()-1][get_Y_axis()] == NULL){
+        ++dbID;
+        grid[get_X_axis()-1][get_Y_axis()] = new DoodleBug(get_X_axis()-1, get_Y_axis(), dbID);
+    }
+    else if (grid[get_X_axis()+1][get_Y_axis()] == NULL){
+        ++dbID;
+        grid[get_X_axis()+1][get_Y_axis()] = new DoodleBug(get_X_axis()+1, get_Y_axis(), dbID);
+    }
+    else if (grid[get_X_axis()][get_Y_axis()-1] == NULL){
+        ++dbID;
+        grid[get_X_axis()][get_Y_axis()-1] = new DoodleBug(get_X_axis(), get_Y_axis()-1, dbID);
+    }
+
+    else if (grid[get_X_axis()][get_Y_axis()+1] == NULL){
+        ++dbID;
+        grid[get_X_axis()][get_Y_axis()+1] = new DoodleBug(get_X_axis(), get_Y_axis()+1, dbID);
+    }
+}
+
+//Implement after Ant child class
+void DoodleBug::starve(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    if (getTimeStep() == STARVE_TIME){
+        if (getIfEaten() == false){
+            delete grid[get_X_axis()][get_Y_axis()];
+            grid[get_X_axis()][get_Y_axis()] = NULL;
         }
     }
 }
 
-void Grid::initializeGrid(){
-    // Initialize doodlebugs randomly
-    for (int i = 0; i < startDoodlebugCount; i++)
-    {
-        int x = rand() % gridSize + 1;
-        int y = rand() % gridSize + 1;
-        if (grid[x][y] == nullptr)
-        {
-            grid[x][y] = new Doodlebug(x, y, this);
+//child class Ant of parent Organism
+class Ant: public Organism{
+private:
+    char a_type;
+public:
+    Ant(int x, int y, int id): Organism(x, y, id), a_type('o'){}
+    virtual ~Ant(){}
+    char getType()const{ return a_type; }
+    void move(Organism* grid[GRID_SIZE][GRID_SIZE]);
+    void breed(Organism* grid[GRID_SIZE][GRID_SIZE], int&);
+};
+
+void Ant::move(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    int direction = rand() % 4 + 1;
+    if (direction == 1 && get_X_axis()-1 >= 0 && getIfMoved() == false){
+        if (grid[get_X_axis()-1][get_Y_axis()] == NULL){
+            int newX = get_X_axis()-1;
+            int newY = get_Y_axis();
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new Ant(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
         }
     }
+    if (direction == 2 && get_X_axis()+1 <= GRID_SIZE - 1 && getIfMoved() == false){
+        if (grid[get_X_axis()+1][get_Y_axis()] == NULL){
+            int newX = get_X_axis()+1;
+            int newY = get_Y_axis();
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
 
-    // Initialize ants randomly
-    for (int i = 0; i < startAntCount; i++)
-    {
-        int x = rand() % gridSize + 1;
-        int y = rand() % gridSize + 1;
-        if (grid[x][y] == nullptr)
-        {
-            grid[x][y] = new Ant(x, y, this);
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new Ant(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+    }
+    if (direction == LEFT && get_Y_axis()-1 >= 0 && getIfMoved() == false){
+        if (grid[get_X_axis()][get_Y_axis()-1] == NULL){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()-1;
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new Ant(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+    }
+    if (direction == 4 && get_Y_axis()+1 <= GRID_SIZE - 1 && getIfMoved() == false){
+        if (grid[get_X_axis()][get_Y_axis()+1] == NULL){
+            int newX = get_X_axis();
+            int newY = get_Y_axis()+1;
+            int newID = getID();
+            int newTimeStep = getTimeStep()+1;
+            delete grid[get_X_axis()][get_Y_axis()];
+
+            grid[get_X_axis()][get_Y_axis()] = NULL;
+            grid[newX][newY] = new Ant(newX, newY, newID);
+            grid[newX][newY]->setTimeStep(newTimeStep);
+            grid[newX][newY]->setIfMoved(true);
+            return;
+        }
+    }
+    setTimeStep(getTimeStep()+1);
+}
+
+void Ant::breed(Organism* grid[GRID_SIZE][GRID_SIZE], int& antID){
+    setTimeStep(0);
+    if (grid[get_X_axis()-1][get_Y_axis()] == NULL){
+        ++antID;
+        grid[get_X_axis()-1][get_Y_axis()] = new Ant(get_X_axis()-1, get_Y_axis(), antID);
+    }
+    else if (grid[get_X_axis()+1][get_Y_axis()] == NULL){
+        ++antID;
+        grid[get_X_axis()+1][get_Y_axis()] = new Ant(get_X_axis()+1, get_Y_axis(), antID);
+    }
+    else if (grid[get_X_axis()][get_Y_axis()-1] == NULL){
+        ++antID;
+        grid[get_X_axis()][get_Y_axis()-1] = new Ant(get_X_axis(), get_Y_axis()-1, antID);
+    }
+
+    else if (grid[get_X_axis()][get_Y_axis()+1] == NULL){
+        ++antID;
+        grid[get_X_axis()][get_Y_axis()+1] = new Ant(get_X_axis(), get_Y_axis()+1, antID);
+    }
+}
+
+void initialize_grid(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    for (int i = 0; i < GRID_SIZE; i++){
+        for (int j = 0; j < GRID_SIZE; j++){
+            grid[i][j] = NULL;
         }
     }
 }
 
-void Grid::displayGrid(){
-    for (int x = 0; x < gridSize; x++)
-    {
-        for (int y = 0; y < gridSize; y++)
-        {
-            if (grid[x][y] == nullptr)
-            {
-                cout<<'-';
+void render(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    for (int i = 0; i < GRID_SIZE; i++){
+        for (int j = 0; j < GRID_SIZE; j++){
+            if (grid[i][j] == NULL){
+                std::cout << "-" << " ";
             }
-            else if (grid[x][y]->getType() == antType )
-            {
-                cout<<antChar;
+            else if (grid[i][j]->getType() == 'X'){
+                std::cout << "X" << " ";
             }
-            else
-            {
-                cout<<doodlebugChar;
+            else if (grid[i][j]->getType() == 'o'){
+                std::cout << "o" << " ";
             }
-            cout<<"  ";
         }
-        cout<<endl;
+
+        std::cout << std::endl;
     }
+    std::cout << std::endl;
 }
 
-void Grid::moveOneTimeStep(){
-    count++;
-    // Move Doodlebugs first
-    for (int x = 0; x < gridSize; x++){
-        for (int y = 0; y < gridSize; y++){
-            if (grid[x][y] != nullptr && grid[x][y]->getType() == doodlebugType){
-                grid[x][y]->move();
-            }
-        }
-    }
-
-    // Move ants
-    for (int x = 0; x < gridSize; x++){
-        for (int y = 0; y < gridSize; y++){
-            if (grid[x][y] != nullptr && grid[x][y]->getType() == antType){
-                grid[x][y]->move();
+int countTheDoodles(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    int count = 0;
+    for (int i = 0; i < GRID_SIZE; i++){
+        for (int j = 0; j < GRID_SIZE; j++){
+            if (grid[i][j] != NULL){
+                if (grid[i][j]->getType() == 'D'){
+                    count++;
+                }
             }
         }
     }
+    return count;
+}
 
-    // Breed organisms that are allowed to breed
-    for (int x = 0; x < gridSize; x++){
-        for (int y = 0; y < gridSize; y++){
-            if (grid[x][y] != nullptr){
-                grid[x][y]->breed();
+int countAnts(Organism* grid[GRID_SIZE][GRID_SIZE]){
+    int count = 0;
+    for (int i = 0; i < GRID_SIZE; i++){
+        for (int j = 0; j < GRID_SIZE; j++){
+            if (grid[i][j] != NULL){
+                if (grid[i][j]->getType() == 'o'){
+                    count++;
+                }
             }
         }
     }
-
-    // Starve organisms set to starve
-    for (int x = 0; x < gridSize; x++){
-        for (int y = 0; y < gridSize; y++){
-            if (grid[x][y] != nullptr && grid[x][y]->shouldStarve()){
-                grid[x][y] = nullptr;
-            }
-        }
-    }
-}
-
-Organism::Organism(int x, int y, Grid* gridptr){
-    this->gridptr = gridptr;
-    this->xCoordinate = x;
-    this->yCoordinate = y;
-    this->stepsUntilBreed = 0;
-    this->count = gridptr->count;
-}
-
-void Organism::pickRandomMove(vector<int> possibleMoves, int& xCoord, int& yCoord) const{
-    int randomNum = getRandomNumber(0, possibleMoves.size() - 1);
-    int move = possibleMoves[randomNum];
-    int newX = xCoordinate;
-    int newY = yCoordinate;
-    updateCoordinateFromMove(newX, newY, move);
-}
-
-vector<int> Organism::findSurroundingEmptyCells(int x, int y) const {
-    vector<int> emptyCells;
-    int newXCoord, newYCoord;
-
-    // up == 1 and right == 4
-    for (int move = upMove; move <= rightMove; move++)
-    {
-        newXCoord = x;
-        newYCoord = y;
-        updateCoordinateFromMove(newXCoord, newYCoord, move);
-        if (isValidCoordinate(newXCoord, newYCoord) && gridptr->grid[newXCoord][newYCoord] == nullptr)
-        {
-            emptyCells.push_back(move);
-        }
-    }
-
-    return emptyCells;
-}
-
-// Validate that a coordinate isn't outside of the bounds of the grid
-bool Organism::isValidCoordinate(int x, int y) const {
-    if (x < 0 || x >= gridSize || y < 0 || y >= gridSize){
-        return false;
-    }
-    return true;
-}
-
-void Organism::move(){
-    if (count == gridptr->count) return;
-    count++;
-    stepsUntilBreed--;
-    int newX = xCoordinate, newY = yCoordinate;
-    int randomNum = getRandomNumber(upMove, rightMove);
-    updateCoordinateFromMove(newX, newY, randomNum);
-    if (isValidCoordinate(newX, newY)){
-        if (gridptr->grid[newX][newY] == nullptr){
-            gridptr->grid[xCoordinate][yCoordinate] = nullptr;
-            gridptr->grid[newX][newY] = this;
-            xCoordinate = newX;
-            yCoordinate = newY;
-        }
-    }
-}
-
-// Given a move (up/down/left/right), update the appropriate coordinate
-void Organism::updateCoordinateFromMove(int& x, int& y, int move) const {
-    switch (move)
-    {
-        case upMove:
-            y++;
-            break;
-        case downMove:
-            y--;
-            break;
-        case leftMove:
-            x--;
-            break;
-        case rightMove:
-            x++;
-            break;
-        default:
-            break;
-    }
-}
-
-Doodlebug::Doodlebug(int x, int y, Grid* gridptr): Organism(x, y, gridptr){
-    stepsUntilBreed = doodlebugBreedTime;
-    stepsUntilStarve = doodlebugStarveTime;
-}
-
-void Doodlebug::breed(){
-    vector<int> validMoves = findSurroundingEmptyCells(xCoordinate, yCoordinate);
-    if (validMoves.size() != 0){
-        int newX = xCoordinate, newY = yCoordinate;
-        pickRandomMove(validMoves, newX, newY);
-        gridptr->grid[newX][newY] = new Doodlebug(newX, newY, gridptr);
-        stepsUntilBreed = doodlebugBreedTime;
-    }
-}
-
-void Doodlebug::move(){
-    // Check if we already moved this Doodlebug
-    if (count == gridptr->count) return;
-    vector<int> ants = findSurroundingAnts(xCoordinate, yCoordinate);
-    if (ants.size() == 0){
-        Organism::move();
-        stepsUntilStarve--;
-        return;
-    }
-    count++;
-    stepsUntilStarve = doodlebugStarveTime;
-    int newX = xCoordinate, newY = yCoordinate;
-    pickRandomMove(ants, newX, newY);
-    gridptr->grid[newX][newY] = this;
-    gridptr->grid[xCoordinate][yCoordinate] = nullptr;
-    xCoordinate = newX;
-    yCoordinate = newY;
-}
-
-vector<int> Doodlebug::findSurroundingAnts(int x, int y) const{
-    vector<int> antLocations;
-    int newX, newY;
-    for (int move = upMove; move <= rightMove; move++){
-        newX = x;
-        newY = y;
-        updateCoordinateFromMove(newX, newY, move);
-        if (!isValidCoordinate(newX, newY))
-        {
-            return antLocations;
-        }
-
-        if (gridptr->grid[newX][newY] != nullptr && gridptr->grid[newX][newY]->getType() == antType)
-            antLocations.push_back(move);
-    }
-    return antLocations;
-
-}
-
-Ant::Ant(int x, int y, Grid* gridptr): Organism(x, y, gridptr){
-    stepsUntilBreed = antBreedTime;
-}
-
-void Ant::breed(){
-    vector<int> validMoves = findSurroundingEmptyCells(xCoordinate, yCoordinate);
-    if (validMoves.size() != 0){
-        int newX = xCoordinate, newY = yCoordinate;
-        pickRandomMove(validMoves, newX, newY);
-        gridptr->grid[newX][newY] = new Ant(newX, newY, gridptr);
-        stepsUntilBreed = antBreedTime;
-    }
-}
-
-int getRandomNumber(int start, int end){
-    return rand() % (end - start + 1) + start;
+    return count;
 }
 
 int main(){
-    srand(time(NULL));
+    Organism* grid[GRID_SIZE][GRID_SIZE];
+    initialize_grid(grid);
+    std::srand(time(NULL));
 
-    Grid grid;
-    grid.initializeGrid();
-
-    cout<<"Starting the Ant vs Doodlebug Game!"<<endl;
-    grid.displayGrid();
-    cout<<"Press enter to simulate one time step. Enter anything else to end the game."<<endl;
-
-    while (cin.get() == '\n')
-    {
-        grid.moveOneTimeStep();
-        grid.displayGrid();
-        cout<<"Press enter to simulate one time step. Enter anything else to end the game."<<endl;
+    // Create 5 doodlebugs on the heap
+    int dbCount = 0;
+    int dbID = 0;
+    while (dbCount < 5){
+        // Get a random x and y coordinate for the grid
+        int randomX = rand() % GRID_SIZE;
+        int randomY = rand() % GRID_SIZE;
+        if (grid[randomX][randomY] == NULL){
+            grid[randomX][randomY] = new DoodleBug(randomX, randomY, dbID);
+            dbCount++;
+            dbID++;
+        }
     }
+    // Create 100 ants on the heap
+    int antCount = 0;
+    int antID = 100;
+    while (antCount < 100){
+        int randomX = rand() % GRID_SIZE;
+        int randomY = rand() % GRID_SIZE;
+        if (grid[randomX][randomY] == NULL){
+            grid[randomX][randomY] = new Ant(randomX, randomY, antID);
+            antCount++;
+            antID++;
+        }
+    }
+    std::cout << "Intial Grid" << std::endl;
+    render(grid);
+    bool flag = true;
 
-    cout<<"Ending the game. Thanks for playing!"<<endl;
+    int step = 0;
+    while (flag){
+        std::cout << "Press Enter to continue..." << std::endl;
+        std::cin.ignore();
+        ++step;
+        std::cout << "******Time Step: " << step << "******" << std::endl;
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'D' && !grid[i][j]->getIfMoved()){
+                        grid[i][j]->move(grid);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'o' && !grid[i][j]->getIfMoved()){
+                        grid[i][j]->move(grid);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'D' || grid[i][j]->getType() == 'o'){
+                        grid[i][j]->setIfMoved(false);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'D'){
+                        grid[i][j]->starve(grid);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'D' && grid[i][j]->getTimeStep() == DOODLE_BREED_TIME){
+                        grid[i][j]->breed(grid, dbID);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_SIZE; i++){
+            for (int j = 0; j < GRID_SIZE; j++){
+                if (grid[i][j] != NULL){
+                    if (grid[i][j]->getType() == 'o' && grid[i][j]->getTimeStep() == 3){
+                        grid[i][j]->breed(grid, antID);
+                    }
+                }
+            }
+        }
+        render(grid);
+        if (countAnts(grid) == 400 || countTheDoodles(grid) == 400){
+            flag = false;
+        }
+    }
+    for (int i = 0; i < GRID_SIZE; i++){
+        for (int j = 0; j < GRID_SIZE; j++){
+            delete grid[i][j];
+            grid[i][j] = NULL;
+        }
+    }
 
     return 0;
 }
