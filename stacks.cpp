@@ -6,6 +6,10 @@
 using namespace std;
 
 
+
+
+
+
 void iterating1(){
     //this is the simplist way
     queue<int> q;

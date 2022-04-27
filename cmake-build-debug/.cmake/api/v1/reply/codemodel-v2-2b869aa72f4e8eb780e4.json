@@ -1,0 +1,393 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cpp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AlgoTesting::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlgoTesting-Debug-c7734a3a49151588f648.json",
+					"name" : "AlgoTesting",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DeBug::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DeBug-Debug-ed4fb3552c0e7d3f11d9.json",
+					"name" : "DeBug",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DoodlebugRef01::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DoodlebugRef01-Debug-4759f7075c145cec0c28.json",
+					"name" : "DoodlebugRef01",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DoodlebugRef02::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DoodlebugRef02-Debug-42e4a759e3b4e7ca7685.json",
+					"name" : "DoodlebugRef02",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DoodlebugRef_Ethan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DoodlebugRef_Ethan-Debug-2e9247ac9834ee4ae0b0.json",
+					"name" : "DoodlebugRef_Ethan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HW6::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HW6-Debug-544ea58a1ea4da9be1ef.json",
+					"name" : "HW6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HW8_4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HW8_4-Debug-f6dddfd199f82f01c97d.json",
+					"name" : "HW8_4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "InsertionSort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InsertionSort-Debug-8e18c19464672a867cdd.json",
+					"name" : "InsertionSort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JumpIt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JumpIt-Debug-9089b3476a10fb1cac00.json",
+					"name" : "JumpIt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OOP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OOP-Debug-282a2355fad1d68077c9.json",
+					"name" : "OOP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PracticeExam::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PracticeExam-Debug-9b2db993fcaf6cfd9afc.json",
+					"name" : "PracticeExam",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Strings::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Strings-Debug-78134162640e6946a7b4.json",
+					"name" : "Strings",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "checks1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-checks1-Debug-c583b778662e5c3fdcda.json",
+					"name" : "checks1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cpp-Debug-8aba554151f8d6777d06.json",
+					"name" : "cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diamond::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diamond-Debug-2ebb5b8cab7750c6efd0.json",
+					"name" : "diamond",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "employeeHW::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-employeeHW-Debug-2f0bf79a84f560e1254d.json",
+					"name" : "employeeHW",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "es5541_hw2_q4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-es5541_hw2_q4-Debug-540381321b2fafd5e4a9.json",
+					"name" : "es5541_hw2_q4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "examQ6::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-examQ6-Debug-bdf7e318940e94b0ea7b.json",
+					"name" : "examQ6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hw11review::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw11review-Debug-cad9046dc99cac9027e9.json",
+					"name" : "hw11review",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hw1_testing::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw1_testing-Debug-9d849d58415078174911.json",
+					"name" : "hw1_testing",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hw3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw3-Debug-f72e4c5db347a06a16af.json",
+					"name" : "hw3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hw3_q1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw3_q1-Debug-82d2ec9fc5795c70ffa9.json",
+					"name" : "hw3_q1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hw4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hw4-Debug-b06b6a4e2d174660be97.json",
+					"name" : "hw4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "iterativeStatements::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-iterativeStatements-Debug-eef119afaaf5dce4f9f8.json",
+					"name" : "iterativeStatements",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "morePointers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-morePointers-Debug-ea7f06c3ed7656e64276.json",
+					"name" : "morePointers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointers-Debug-dc3a8a88e5aae81bf680.json",
+					"name" : "pointers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointersExample::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointersExample-Debug-0718d274ec24a85215b6.json",
+					"name" : "pointersExample",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "practice2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-practice2-Debug-222ba7a8c67b26128617.json",
+					"name" : "practice2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "readin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-readin-Debug-2711a617dd38cdf895cf.json",
+					"name" : "readin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "scratch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-scratch-Debug-6fff894a48940cbe07ac.json",
+					"name" : "scratch",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "scratch2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-scratch2-Debug-ea6a55eceeda6365bdc4.json",
+					"name" : "scratch2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stacks::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stacks-Debug-29ea4a3ba678c5764992.json",
+					"name" : "stacks",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stringthings::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stringthings-Debug-1cbbb688d00130918599.json",
+					"name" : "stringthings",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "studentWork::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-studentWork-Debug-bb631345ae3976be2786.json",
+					"name" : "studentWork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "studentWork17::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-studentWork17-Debug-33efee8d4127f5dd96c6.json",
+					"name" : "studentWork17",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "studentwork2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-studentwork2-Debug-560244cc89b27d6236d0.json",
+					"name" : "studentwork2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test1-Debug-8af52199cd2006dcf5c7.json",
+					"name" : "test1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testing::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testing-Debug-6e44d2e4e8aa222d65e1.json",
+					"name" : "testing",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug",
+		"source" : "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
