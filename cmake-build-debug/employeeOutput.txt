@@ -1,0 +1,5 @@
+*********Payroll Information********
+Daniel Katz $210
+John F. Jones $270
+Aang Airbender $333.2
+***********End payroll**************
