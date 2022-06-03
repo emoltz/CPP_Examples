@@ -136,7 +136,12 @@ void useCase3(){
 }
 
 int myFunction2(int *p){
+    int *arr = new int[6];
+    int **pointer = &arr;
 
+
+
+    pointer++;
 }
 
 void vectors(){

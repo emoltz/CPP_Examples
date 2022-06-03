@@ -4,7 +4,7 @@
 using namespace std;
 
 //example1: remove the even numbers of an array
-int* removeEven(int *arr, int arrSize, int &outPosArrSize){
+int* removeEven(const int *arr, int arrSize, int &outPosArrSize){
 
     int newArrayIndex = 0;
     int j = 0;
@@ -70,7 +70,7 @@ int main(){
     int var = 10;
     int *ptr = &var;
     *ptr = 20;
-    int **ptrptr = &var;
+    int **ptrptr = &(*var);
     **ptrptr = 30;
     cout << var;
 }
