@@ -1,57 +1,34 @@
-#include <iostream>
-#include <queue>
-using namespace std;
 
-// LList
-/*
-Since I am using a linked list, you must set the pointer to
-the head of the linked list (the first node), before pointing towards the address of the next node.
-Each node will have their stored values and addresses. The last node that will not
-have a node after it, will be the tail and it points to NULL.
-*/
+template<class T>
+class EnhancedQueue{
+private:
+	Llist<T> alist;
+	RBT<T> tree;
+	int size;
+public:
+	EnhancedQueue(Llist<T> newList = Llist<T>(), RBT<T> newTree = RBT<T>(), int newSize = 0): alist(newList), tree(newTree), size(newSize){};
+    void enqueue(T data){alist.push_back(data); tree.insert(data); size++;} //runtime should be theta logn
+    void dequeue(){
+        T front = alist.front();
+        alist.pop_front();
+        tree.remove(front);
+        if (size > 0)
+        {
+            size--;
+        } else if (size == 0)
+        {
+            cout<<"Error dequeueing an empty queue\n";
+        }
+        } //runtime theta logn
+    T front(){return alist.front();} //runtime theta 1
+    bool isEmpty(){return alist.empty();} //runtime theta 1
 
-class EnhancedQueue()
-{
-// initialize the variables. The new node will be the head of the queue.
-int *node = new node();
-
-//Enqueue: is the end of the queue and where the tail is. This will be the last element that you pop and push.
-node->enqueue();
-
-// Dequeue: is the front of the queue where we will pop and push the elements. This is the head.
-node->dequeue();
-
-// front: is the front of the queue where you will pop and push the element first, before moving onto the next element.
-node->front();
-
-//isEmpty: to check if the queue is empty. If the location in queue is empty then move to the next location, if there is none left then exit.
-node->isEmpty();
-
-/*
-size: to check the size of the queue
-*/
-node->size();
-
-/*
-contains: to check the queue if that element is in it. If it is in it, then you can add it
-next to that value in the queue, otherwise insert it in between the value that is less than it and greater than it.
-*/
-node->contains();
-
-//clear: clear so you don't end up overloading
-node->clear();
-
-// delete the node
-delete node;
+    //for size.. size function in our LList in class was linear, so cant use that
+    //so I'm storing a size int in this class to access it in theta 1
+    int size(){return size;}
+    
+    bool contains(T data){return tree.search(data);} //assumes we have a search function in our RBT class.
+    //Because of the binary search tree quality of RBT, a search in the RBT is logn.
+    //Therefore this contains function's runtime is theta logn.
+    void clear(){alist.clear(); tree.clear(); size = 0;} //runtime is n + n + 1 so theta(n)
 };
-
-int main()
-{
-    // call the class
-    EnhancedQueue(node);
-
-    // push and pop the values
-    node.push();
-    node.pop();
-    return 0;
-}

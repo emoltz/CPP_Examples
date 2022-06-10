@@ -164,6 +164,68 @@ build OOP: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/OOP.cpp.o
   TARGET_FILE = OOP
   TARGET_PDB = OOP.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target OOP_pets
+
+
+#############################################
+# Order-only phony target for OOP_pets
+
+build cmake_object_order_depends_target_OOP_pets: phony || CMakeFiles/OOP_pets.dir
+
+build CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o: CXX_COMPILER__OOP_pets_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP_pets.cpp || cmake_object_order_depends_target_OOP_pets
+  DEP_FILE = CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/OOP_pets.dir
+  OBJECT_FILE_DIR = CMakeFiles/OOP_pets.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target OOP_pets
+
+
+#############################################
+# Link the executable OOP_pets
+
+build OOP_pets: CXX_EXECUTABLE_LINKER__OOP_pets_Debug CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/OOP_pets.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = OOP_pets
+  TARGET_PDB = OOP_pets.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target linkedLists
+
+
+#############################################
+# Order-only phony target for linkedLists
+
+build cmake_object_order_depends_target_linkedLists: phony || CMakeFiles/linkedLists.dir
+
+build CMakeFiles/linkedLists.dir/linkedLists.cpp.o: CXX_COMPILER__linkedLists_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/linkedLists.cpp || cmake_object_order_depends_target_linkedLists
+  DEP_FILE = CMakeFiles/linkedLists.dir/linkedLists.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/linkedLists.dir
+  OBJECT_FILE_DIR = CMakeFiles/linkedLists.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target linkedLists
+
+
+#############################################
+# Link the executable linkedLists
+
+build linkedLists: CXX_EXECUTABLE_LINKER__linkedLists_Debug CMakeFiles/linkedLists.dir/linkedLists.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/linkedLists.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = linkedLists
+  TARGET_PDB = linkedLists.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -198,7 +260,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony studentWork ifstream threads OOP
+build all: phony studentWork ifstream threads OOP OOP_pets linkedLists
 
 # =============================================================================
 # Built-in targets

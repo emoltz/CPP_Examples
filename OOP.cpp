@@ -17,6 +17,11 @@ public:
     };
     Pet(int age, int weight, string name) : _age {age}, _weight {weight}, _name {name}{};
 
+    int getAge(){
+        return _age;
+    }
+
+    virtual bool speak () = 0;
     // Let us create a series of operators which we will then use to display _data and what not.
     // First let us define the out stream/printing operator.
     friend ostream& operator<<(ostream& os, const Pet& pet);
@@ -45,6 +50,16 @@ public:
         this->_weight += p._weight;
         this->_name.append(p._name);
         return *this;
+    }
+};
+
+class Dog : public Pet{
+public:
+    bool speak() override{
+
+    }
+    public fff(){
+        Pet(475)
     }
 };
 
@@ -86,3 +101,4 @@ Pet Pet::operator++(int) {
     this->_weight++;
     return temp;
 }
+
