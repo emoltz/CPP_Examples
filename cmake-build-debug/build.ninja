@@ -80,11 +80,11 @@ build studentWork: CXX_EXECUTABLE_LINKER__studentWork_Debug CMakeFiles/studentWo
 
 build cmake_object_order_depends_target_ifstream: phony || CMakeFiles/ifstream.dir
 
-build CMakeFiles/ifstream.dir/ifstream.cpp.o: CXX_COMPILER__ifstream_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/ifstream.cpp || cmake_object_order_depends_target_ifstream
-  DEP_FILE = CMakeFiles/ifstream.dir/ifstream.cpp.o.d
+build CMakeFiles/ifstream.dir/readIn_out/ifstream.cpp.o: CXX_COMPILER__ifstream_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/readIn_out/ifstream.cpp || cmake_object_order_depends_target_ifstream
+  DEP_FILE = CMakeFiles/ifstream.dir/readIn_out/ifstream.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/ifstream.dir
-  OBJECT_FILE_DIR = CMakeFiles/ifstream.dir
+  OBJECT_FILE_DIR = CMakeFiles/ifstream.dir/readIn_out
 
 
 # =============================================================================
@@ -94,7 +94,7 @@ build CMakeFiles/ifstream.dir/ifstream.cpp.o: CXX_COMPILER__ifstream_Debug /User
 #############################################
 # Link the executable ifstream
 
-build ifstream: CXX_EXECUTABLE_LINKER__ifstream_Debug CMakeFiles/ifstream.dir/ifstream.cpp.o
+build ifstream: CXX_EXECUTABLE_LINKER__ifstream_Debug CMakeFiles/ifstream.dir/readIn_out/ifstream.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ifstream.dir
   POST_BUILD = :
@@ -111,11 +111,11 @@ build ifstream: CXX_EXECUTABLE_LINKER__ifstream_Debug CMakeFiles/ifstream.dir/if
 
 build cmake_object_order_depends_target_threads: phony || CMakeFiles/threads.dir
 
-build CMakeFiles/threads.dir/threads.cpp.o: CXX_COMPILER__threads_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/threads.cpp || cmake_object_order_depends_target_threads
-  DEP_FILE = CMakeFiles/threads.dir/threads.cpp.o.d
+build CMakeFiles/threads.dir/homeworkDemos/threads.cpp.o: CXX_COMPILER__threads_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/homeworkDemos/threads.cpp || cmake_object_order_depends_target_threads
+  DEP_FILE = CMakeFiles/threads.dir/homeworkDemos/threads.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/threads.dir
-  OBJECT_FILE_DIR = CMakeFiles/threads.dir
+  OBJECT_FILE_DIR = CMakeFiles/threads.dir/homeworkDemos
 
 
 # =============================================================================
@@ -125,7 +125,7 @@ build CMakeFiles/threads.dir/threads.cpp.o: CXX_COMPILER__threads_Debug /Users/e
 #############################################
 # Link the executable threads
 
-build threads: CXX_EXECUTABLE_LINKER__threads_Debug CMakeFiles/threads.dir/threads.cpp.o
+build threads: CXX_EXECUTABLE_LINKER__threads_Debug CMakeFiles/threads.dir/homeworkDemos/threads.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/threads.dir
   POST_BUILD = :
@@ -142,11 +142,11 @@ build threads: CXX_EXECUTABLE_LINKER__threads_Debug CMakeFiles/threads.dir/threa
 
 build cmake_object_order_depends_target_OOP: phony || CMakeFiles/OOP.dir
 
-build CMakeFiles/OOP.dir/OOP.cpp.o: CXX_COMPILER__OOP_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP.cpp || cmake_object_order_depends_target_OOP
-  DEP_FILE = CMakeFiles/OOP.dir/OOP.cpp.o.d
+build CMakeFiles/OOP.dir/OOP/OOP.cpp.o: CXX_COMPILER__OOP_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP/OOP.cpp || cmake_object_order_depends_target_OOP
+  DEP_FILE = CMakeFiles/OOP.dir/OOP/OOP.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/OOP.dir
-  OBJECT_FILE_DIR = CMakeFiles/OOP.dir
+  OBJECT_FILE_DIR = CMakeFiles/OOP.dir/OOP
 
 
 # =============================================================================
@@ -156,7 +156,7 @@ build CMakeFiles/OOP.dir/OOP.cpp.o: CXX_COMPILER__OOP_Debug /Users/ethanshafranm
 #############################################
 # Link the executable OOP
 
-build OOP: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/OOP.cpp.o
+build OOP: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/OOP/OOP.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/OOP.dir
   POST_BUILD = :
@@ -173,11 +173,11 @@ build OOP: CXX_EXECUTABLE_LINKER__OOP_Debug CMakeFiles/OOP.dir/OOP.cpp.o
 
 build cmake_object_order_depends_target_OOP_pets: phony || CMakeFiles/OOP_pets.dir
 
-build CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o: CXX_COMPILER__OOP_pets_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP_pets.cpp || cmake_object_order_depends_target_OOP_pets
-  DEP_FILE = CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o.d
+build CMakeFiles/OOP_pets.dir/OOP/OOP_pets.cpp.o: CXX_COMPILER__OOP_pets_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/OOP/OOP_pets.cpp || cmake_object_order_depends_target_OOP_pets
+  DEP_FILE = CMakeFiles/OOP_pets.dir/OOP/OOP_pets.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/OOP_pets.dir
-  OBJECT_FILE_DIR = CMakeFiles/OOP_pets.dir
+  OBJECT_FILE_DIR = CMakeFiles/OOP_pets.dir/OOP
 
 
 # =============================================================================
@@ -187,7 +187,7 @@ build CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o: CXX_COMPILER__OOP_pets_Debug /User
 #############################################
 # Link the executable OOP_pets
 
-build OOP_pets: CXX_EXECUTABLE_LINKER__OOP_pets_Debug CMakeFiles/OOP_pets.dir/OOP_pets.cpp.o
+build OOP_pets: CXX_EXECUTABLE_LINKER__OOP_pets_Debug CMakeFiles/OOP_pets.dir/OOP/OOP_pets.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/OOP_pets.dir
   POST_BUILD = :
@@ -204,11 +204,11 @@ build OOP_pets: CXX_EXECUTABLE_LINKER__OOP_pets_Debug CMakeFiles/OOP_pets.dir/OO
 
 build cmake_object_order_depends_target_linkedLists: phony || CMakeFiles/linkedLists.dir
 
-build CMakeFiles/linkedLists.dir/linkedLists.cpp.o: CXX_COMPILER__linkedLists_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/linkedLists.cpp || cmake_object_order_depends_target_linkedLists
-  DEP_FILE = CMakeFiles/linkedLists.dir/linkedLists.cpp.o.d
+build CMakeFiles/linkedLists.dir/data_structures/linkedLists.cpp.o: CXX_COMPILER__linkedLists_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/data_structures/linkedLists.cpp || cmake_object_order_depends_target_linkedLists
+  DEP_FILE = CMakeFiles/linkedLists.dir/data_structures/linkedLists.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/linkedLists.dir
-  OBJECT_FILE_DIR = CMakeFiles/linkedLists.dir
+  OBJECT_FILE_DIR = CMakeFiles/linkedLists.dir/data_structures
 
 
 # =============================================================================
@@ -218,7 +218,7 @@ build CMakeFiles/linkedLists.dir/linkedLists.cpp.o: CXX_COMPILER__linkedLists_De
 #############################################
 # Link the executable linkedLists
 
-build linkedLists: CXX_EXECUTABLE_LINKER__linkedLists_Debug CMakeFiles/linkedLists.dir/linkedLists.cpp.o
+build linkedLists: CXX_EXECUTABLE_LINKER__linkedLists_Debug CMakeFiles/linkedLists.dir/data_structures/linkedLists.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/linkedLists.dir
   POST_BUILD = :
