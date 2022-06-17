@@ -66,7 +66,7 @@ public:
             while (itr->_next != nullptr){
                 itr = itr->_next;
             }
-            temp->_next = temp;
+            itr->_next = temp;
         }
 
     }
