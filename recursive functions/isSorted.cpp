@@ -18,6 +18,7 @@ bool isSorted(int s[], int length){
             return false;
         }
     }
+    return false;
 }
 
 int main(){

@@ -288,6 +288,37 @@ build misc_shapes: CXX_EXECUTABLE_LINKER__misc_shapes_Debug CMakeFiles/misc_shap
   TARGET_FILE = misc_shapes
   TARGET_PDB = misc_shapes.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target nodes
+
+
+#############################################
+# Order-only phony target for nodes
+
+build cmake_object_order_depends_target_nodes: phony || CMakeFiles/nodes.dir
+
+build CMakeFiles/nodes.dir/recursive_functions/nodes.cpp.o: CXX_COMPILER__nodes_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/recursive$ functions/nodes.cpp || cmake_object_order_depends_target_nodes
+  DEP_FILE = CMakeFiles/nodes.dir/recursive_functions/nodes.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/nodes.dir
+  OBJECT_FILE_DIR = CMakeFiles/nodes.dir/recursive_functions
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target nodes
+
+
+#############################################
+# Link the executable nodes
+
+build nodes: CXX_EXECUTABLE_LINKER__nodes_Debug CMakeFiles/nodes.dir/recursive_functions/nodes.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/nodes.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = nodes
+  TARGET_PDB = nodes.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -322,7 +353,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes
+build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes
 
 # =============================================================================
 # Built-in targets
