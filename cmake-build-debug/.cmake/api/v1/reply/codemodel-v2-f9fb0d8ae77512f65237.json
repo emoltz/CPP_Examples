@@ -23,7 +23,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
@@ -46,12 +47,20 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 0,
+					"id" : "17week_exam3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-17week_exam3-Debug-8b62ad4a2f723327dd5a.json",
+					"name" : "17week_exam3",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 0,
 					"id" : "OOP::@6890427a1f51a3e7e1df",

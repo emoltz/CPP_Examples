@@ -319,6 +319,37 @@ build nodes: CXX_EXECUTABLE_LINKER__nodes_Debug CMakeFiles/nodes.dir/recursive_f
   TARGET_FILE = nodes
   TARGET_PDB = nodes.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target 17week_exam3
+
+
+#############################################
+# Order-only phony target for 17week_exam3
+
+build cmake_object_order_depends_target_17week_exam3: phony || CMakeFiles/17week_exam3.dir
+
+build CMakeFiles/17week_exam3.dir/examPrep/17week_exam3.cpp.o: CXX_COMPILER__17week_exam3_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/examPrep/17week_exam3.cpp || cmake_object_order_depends_target_17week_exam3
+  DEP_FILE = CMakeFiles/17week_exam3.dir/examPrep/17week_exam3.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/17week_exam3.dir
+  OBJECT_FILE_DIR = CMakeFiles/17week_exam3.dir/examPrep
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 17week_exam3
+
+
+#############################################
+# Link the executable 17week_exam3
+
+build 17week_exam3: CXX_EXECUTABLE_LINKER__17week_exam3_Debug CMakeFiles/17week_exam3.dir/examPrep/17week_exam3.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/17week_exam3.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 17week_exam3
+  TARGET_PDB = 17week_exam3.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -353,7 +384,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes
+build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes 17week_exam3
 
 # =============================================================================
 # Built-in targets

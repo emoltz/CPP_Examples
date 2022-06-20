@@ -7,5 +7,6 @@
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/isSorted.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/misc_shapes.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/nodes.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/17week_exam3.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
