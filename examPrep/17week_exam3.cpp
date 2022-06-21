@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 //Q5
@@ -69,6 +70,71 @@ public:
 void q8(){
     A a(1, 2);
     A b = a;
+}
+
+
+//Q9
+class Sorting{
+    virtual vector<int> sort(vector<int>& v) = 0;
+    virtual string worst_case_runtime() = 0;
+};
+
+class InsertionSort: public Sorting{
+public:
+    string worst_case_runtime() override{
+        return "O(n^2)";
+    }
+
+    vector<int>sort(vector<int>& v) override{
+        //what is the general intuition for insertion sort?
+    }
+
+};
+
+
+//Q10
+struct ListNode{
+    int val;
+    ListNode* next;
+    ListNode(int val): val(val), next(nullptr){}
+};
+
+ListNode* reverse_linked_list(ListNode* head){
+    ListNode* prev = nullptr;
+    ListNode* curr = head;
+
+    //works better with a picture
+    while(curr->next != nullptr){
+        ListNode* next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+bool is_target_in_list(ListNode* head, int target){
+    ListNode* itr = head;
+    while(itr != nullptr){
+        if(itr->val == target){
+            return true;
+        }
+        itr = itr->next;
+    }
+    return false;
+
+}
+
+int find_max(ListNode* head){
+    int max = head->val;
+    ListNode* itr = head;
+    while(itr != nullptr){
+        if (itr->val > max){
+            max = itr->val;
+        }
+        itr = itr->next;
+    }
+    return max;
 }
 
 
