@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <list>
+#include <fstream>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
 //Q5
@@ -137,9 +140,56 @@ int find_max(ListNode* head){
     return max;
 }
 
+//Q11
+list<int> get_integer(const string& filename){
+    list<int> big_int;
+    ifstream input(filename);
+    string line;
+    if(input.is_open()){
+        while(getline(input, line)){
+            for(auto num: line){
+                int n = num - '0';
+                big_int.push_front(n);
+            }
+        }
+    }
+    else{
+        cout << "Could not open file" << endl;
+    }
+    return big_int;
+}
+
+list<int> add_integers(const list<int>& l1, const list<int> & l2){
+    list<int> result;
+    //assuming both lists are the same size
+    int carry = 0;
+    for(auto itr1 = l1.begin(), itr2 = l2.begin(); itr1 != l1.end() && itr2 != l2.end(); itr1++, itr2++){
+        int total_val = *itr1 + *itr2 + carry;
+        int insert_val = total_val % 10;
+        carry = total_val / 10;
+        result.push_back(insert_val);
+    }
+    if (carry > 0){
+        result.push_back(carry);
+    }
+    return result;
+
+}
+
+//Q12
+//Implement stack using queues
+
+class Stack{
+    queue<int> q1, q2;
+    int curr_size;
+
+public:
+    Stack(){
+        curr_size = 0;
+    }
+};
 
 
 int main(){
-    q8();
     return 0;
 }
