@@ -99,7 +99,9 @@ public:
 struct ListNode{
     int val;
     ListNode* next;
+    ListNode(){}
     ListNode(int val): val(val), next(nullptr){}
+    ListNode(int val, ListNode* link): val(val), next(link){}
 };
 
 ListNode* reverse_linked_list(ListNode* head){
@@ -107,13 +109,35 @@ ListNode* reverse_linked_list(ListNode* head){
     ListNode* curr = head;
 
     //works better with a picture
-    while(curr->next != nullptr){
+    while(curr != nullptr){
         ListNode* next = curr->next;
         curr->next = prev;
         prev = curr;
         curr = next;
     }
     return prev;
+}
+
+void nodeTest(){
+    ListNode a, b, c, d;
+    a.val = 1;
+    a.next = &b;
+
+    b.val = 2;
+    b.next = &c;
+
+    c.val = 3;
+    c.next = &d;
+
+    d.val = 4;
+    d.next = nullptr;
+
+    ListNode* head = &a;
+
+    ListNode* reverse = reverse_linked_list(head);
+    cout << reverse->val;
+
+
 }
 
 bool is_target_in_list(ListNode* head, int target){
@@ -191,5 +215,7 @@ public:
 
 
 int main(){
+    nodeTest();
+
     return 0;
 }
