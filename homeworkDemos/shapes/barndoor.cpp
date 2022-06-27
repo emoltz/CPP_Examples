@@ -30,30 +30,6 @@ int main()
             }
         }
 
-        // initial attempt -- too ridiculous
-        //  for (int nc=0; nc<= input-1;nc++){
-        //    if (r!=0 || r!=input-1){
-        //      if (nc==0 ){
-        //        output += "#";
-        //      }
-        //    }
-        //  }
-
-        // for (int s=1;s<r;s++){
-        //   output +="P";
-        // }
-
-        // for (int d=0;d<r;d++){
-        //   if (d==0 ){
-        //   output +="$";
-        //   }
-        // }
-
-        // for (int as=2;as<input-r ;as++ ){
-        //   if (r!=0){
-        //   output+= "X";
-        //   }
-        // }
 
         output += "\n";
     }
