@@ -266,11 +266,11 @@ build isSorted: CXX_EXECUTABLE_LINKER__isSorted_Debug CMakeFiles/isSorted.dir/re
 
 build cmake_object_order_depends_target_misc_shapes: phony || CMakeFiles/misc_shapes.dir
 
-build CMakeFiles/misc_shapes.dir/homeworkDemos/shapes/misc_shapes.cpp.o: CXX_COMPILER__misc_shapes_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/homeworkDemos/shapes/misc_shapes.cpp || cmake_object_order_depends_target_misc_shapes
-  DEP_FILE = CMakeFiles/misc_shapes.dir/homeworkDemos/shapes/misc_shapes.cpp.o.d
+build CMakeFiles/misc_shapes.dir/shapes/misc_shapes.cpp.o: CXX_COMPILER__misc_shapes_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/shapes/misc_shapes.cpp || cmake_object_order_depends_target_misc_shapes
+  DEP_FILE = CMakeFiles/misc_shapes.dir/shapes/misc_shapes.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/misc_shapes.dir
-  OBJECT_FILE_DIR = CMakeFiles/misc_shapes.dir/homeworkDemos/shapes
+  OBJECT_FILE_DIR = CMakeFiles/misc_shapes.dir/shapes
 
 
 # =============================================================================
@@ -280,7 +280,7 @@ build CMakeFiles/misc_shapes.dir/homeworkDemos/shapes/misc_shapes.cpp.o: CXX_COM
 #############################################
 # Link the executable misc_shapes
 
-build misc_shapes: CXX_EXECUTABLE_LINKER__misc_shapes_Debug CMakeFiles/misc_shapes.dir/homeworkDemos/shapes/misc_shapes.cpp.o
+build misc_shapes: CXX_EXECUTABLE_LINKER__misc_shapes_Debug CMakeFiles/misc_shapes.dir/shapes/misc_shapes.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/misc_shapes.dir
   POST_BUILD = :
@@ -390,11 +390,11 @@ build linkedLists1: CXX_EXECUTABLE_LINKER__linkedLists1_Debug CMakeFiles/linkedL
 
 build cmake_object_order_depends_target_diamond: phony || CMakeFiles/diamond.dir
 
-build CMakeFiles/diamond.dir/homeworkDemos/shapes/diamond.cpp.o: CXX_COMPILER__diamond_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/homeworkDemos/shapes/diamond.cpp || cmake_object_order_depends_target_diamond
-  DEP_FILE = CMakeFiles/diamond.dir/homeworkDemos/shapes/diamond.cpp.o.d
+build CMakeFiles/diamond.dir/shapes/diamond.cpp.o: CXX_COMPILER__diamond_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/shapes/diamond.cpp || cmake_object_order_depends_target_diamond
+  DEP_FILE = CMakeFiles/diamond.dir/shapes/diamond.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/diamond.dir
-  OBJECT_FILE_DIR = CMakeFiles/diamond.dir/homeworkDemos/shapes
+  OBJECT_FILE_DIR = CMakeFiles/diamond.dir/shapes
 
 
 # =============================================================================
@@ -404,13 +404,75 @@ build CMakeFiles/diamond.dir/homeworkDemos/shapes/diamond.cpp.o: CXX_COMPILER__d
 #############################################
 # Link the executable diamond
 
-build diamond: CXX_EXECUTABLE_LINKER__diamond_Debug CMakeFiles/diamond.dir/homeworkDemos/shapes/diamond.cpp.o
+build diamond: CXX_EXECUTABLE_LINKER__diamond_Debug CMakeFiles/diamond.dir/shapes/diamond.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/diamond.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = diamond
   TARGET_PDB = diamond.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 17week_exam3_q9
+
+
+#############################################
+# Order-only phony target for 17week_exam3_q9
+
+build cmake_object_order_depends_target_17week_exam3_q9: phony || CMakeFiles/17week_exam3_q9.dir
+
+build CMakeFiles/17week_exam3_q9.dir/examPrep/17week_exam3_q9.cpp.o: CXX_COMPILER__17week_exam3_q9_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/examPrep/17week_exam3_q9.cpp || cmake_object_order_depends_target_17week_exam3_q9
+  DEP_FILE = CMakeFiles/17week_exam3_q9.dir/examPrep/17week_exam3_q9.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/17week_exam3_q9.dir
+  OBJECT_FILE_DIR = CMakeFiles/17week_exam3_q9.dir/examPrep
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 17week_exam3_q9
+
+
+#############################################
+# Link the executable 17week_exam3_q9
+
+build 17week_exam3_q9: CXX_EXECUTABLE_LINKER__17week_exam3_q9_Debug CMakeFiles/17week_exam3_q9.dir/examPrep/17week_exam3_q9.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/17week_exam3_q9.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 17week_exam3_q9
+  TARGET_PDB = 17week_exam3_q9.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target twosymbolHourglass
+
+
+#############################################
+# Order-only phony target for twosymbolHourglass
+
+build cmake_object_order_depends_target_twosymbolHourglass: phony || CMakeFiles/twosymbolHourglass.dir
+
+build CMakeFiles/twosymbolHourglass.dir/shapes/twosymbolHourglass.cpp.o: CXX_COMPILER__twosymbolHourglass_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/shapes/twosymbolHourglass.cpp || cmake_object_order_depends_target_twosymbolHourglass
+  DEP_FILE = CMakeFiles/twosymbolHourglass.dir/shapes/twosymbolHourglass.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/twosymbolHourglass.dir
+  OBJECT_FILE_DIR = CMakeFiles/twosymbolHourglass.dir/shapes
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target twosymbolHourglass
+
+
+#############################################
+# Link the executable twosymbolHourglass
+
+build twosymbolHourglass: CXX_EXECUTABLE_LINKER__twosymbolHourglass_Debug CMakeFiles/twosymbolHourglass.dir/shapes/twosymbolHourglass.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/twosymbolHourglass.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = twosymbolHourglass
+  TARGET_PDB = twosymbolHourglass.dbg
 
 
 #############################################
@@ -446,7 +508,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes 17week_exam3 linkedLists1 diamond
+build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes 17week_exam3 linkedLists1 diamond 17week_exam3_q9 twosymbolHourglass
 
 # =============================================================================
 # Built-in targets
