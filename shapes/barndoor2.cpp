@@ -17,7 +17,7 @@ int main(){
             if (j == 0 || j == input - 1 || i == 0 || i == input - 1){
                 cout << frame;
             }
-            // left diagnonal going right || right diagonal going left
+            // left diagonal going right || right diagonal going left
             else if(i == j || i + j == input - 1){
                 cout << planks;
             }

@@ -6,7 +6,7 @@ int main() {
     int userInput = 5;
 
     char letter = 'a';
-    char spaceChar = ' ';
+    char spaceChar = '_';
 
     int outsideSpaceLimit = userInput;
     int insideSpaceLimit = 0;

@@ -533,6 +533,37 @@ build barndoor2: CXX_EXECUTABLE_LINKER__barndoor2_Debug CMakeFiles/barndoor2.dir
   TARGET_FILE = barndoor2
   TARGET_PDB = barndoor2.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target letter_triangle
+
+
+#############################################
+# Order-only phony target for letter_triangle
+
+build cmake_object_order_depends_target_letter_triangle: phony || CMakeFiles/letter_triangle.dir
+
+build CMakeFiles/letter_triangle.dir/shapes/letter_triangle.cpp.o: CXX_COMPILER__letter_triangle_Debug /Users/ethanshafranmoltz/Documents/NYU/Bridge$ 2022/Winter$ 24$ Week/Code/cpp/shapes/letter$ triangle.cpp || cmake_object_order_depends_target_letter_triangle
+  DEP_FILE = CMakeFiles/letter_triangle.dir/shapes/letter_triangle.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/letter_triangle.dir
+  OBJECT_FILE_DIR = CMakeFiles/letter_triangle.dir/shapes
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target letter_triangle
+
+
+#############################################
+# Link the executable letter_triangle
+
+build letter_triangle: CXX_EXECUTABLE_LINKER__letter_triangle_Debug CMakeFiles/letter_triangle.dir/shapes/letter_triangle.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/letter_triangle.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = letter_triangle
+  TARGET_PDB = letter_triangle.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -567,7 +598,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug
 
-build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes 17week_exam3 linkedLists1 diamond 17week_exam3_q9 twosymbolHourglass barndoor barndoor2
+build all: phony studentWork ifstream threads OOP OOP_pets linkedLists isSorted misc_shapes nodes 17week_exam3 linkedLists1 diamond 17week_exam3_q9 twosymbolHourglass barndoor barndoor2 letter_triangle
 
 # =============================================================================
 # Built-in targets
