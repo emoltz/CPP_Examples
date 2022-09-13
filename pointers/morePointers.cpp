@@ -33,6 +33,11 @@ int* findDuplicates(int arr[], int arrSize, int &outSize){
     }
 }
 
+void swapArrays(int*& array1, int*& array2){
+    int* tempArray = array1;
+    array1 = array2;
+    array2 = tempArray;
+}
 
 //example2: pointer arithmetic.
 void pointerArithmetic(){
