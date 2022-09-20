@@ -1,0 +1,213 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cpp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "17week_exam3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-17week_exam3-Debug-e56bada5f35cc5823364.json",
+					"name" : "17week_exam3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "17week_exam3_q9::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-17week_exam3_q9-Debug-0eef82dcd3e3d99b1c56.json",
+					"name" : "17week_exam3_q9",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OOP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OOP-Debug-3897a5cdf08c6bd7886d.json",
+					"name" : "OOP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "OOP_pets::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-OOP_pets-Debug-b4f6d6fc5f0114e3ee9d.json",
+					"name" : "OOP_pets",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "barndoor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-barndoor-Debug-d3e9561ad2566c663971.json",
+					"name" : "barndoor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "barndoor2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-barndoor2-Debug-3e89e3dc7ce8f4eb87b6.json",
+					"name" : "barndoor2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diamond::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diamond-Debug-2dd33d78210d08516228.json",
+					"name" : "diamond",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "exam2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-exam2-Debug-f184036183575003376c.json",
+					"name" : "exam2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ifstream::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ifstream-Debug-2a9852ea15f1b120289d.json",
+					"name" : "ifstream",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isSorted::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isSorted-Debug-c9612cf52c3e30ae26a9.json",
+					"name" : "isSorted",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "letter_triangle::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-letter_triangle-Debug-110c2339cfe744e2b8af.json",
+					"name" : "letter_triangle",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "linkedLists::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-linkedLists-Debug-5169089c37f1e5572d6c.json",
+					"name" : "linkedLists",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "linkedLists1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-linkedLists1-Debug-0692cf68d488d959de17.json",
+					"name" : "linkedLists1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "misc_shapes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-misc_shapes-Debug-d24f859091cffc0d4ae1.json",
+					"name" : "misc_shapes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodes-Debug-85162903caa97d829d44.json",
+					"name" : "nodes",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "studentWork::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-studentWork-Debug-8551c61bc70b666016ec.json",
+					"name" : "studentWork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "threads::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-threads-Debug-79bca16f5211f5e7a880.json",
+					"name" : "threads",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "twosymbolHourglass::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-twosymbolHourglass-Debug-e1fbdc11db0778de7efe.json",
+					"name" : "twosymbolHourglass",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug",
+		"source" : "/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
