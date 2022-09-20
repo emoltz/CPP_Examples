@@ -1,84 +1,173 @@
-
 #include <iostream>
 #include <vector>
-#include <string>
-
 using namespace std;
 
-
+void resizeArr(int*& arr, int arrSize, int newArrSize);
+int main1();
+int main2();
 int main(){
 
-    vector <string> vec;
+    main1();
+    cout << endl;
+    main2();
 
-    cout << "Please enter a non-empty sequence of Strings."
-         << "Each string should be in a separate line and consists of only alphanumeric"
-         << "characters and special characters @, #, $, !, &. To indicate the"
-         << "end of the input, enter an empty string in one line." << endl;
+    return 0;
 
-    string str;
+}
 
-    do {
-        getline(cin, str);
-        vec.push_back(str+" ");
+void resizeArr(int*& arr, int arrSize, int newArrSize) {
 
-    } while(str != "");
+    int* temp = new int[newArrSize];
 
-    string temp1;
-    string temp2 = "";
+    for (int i = 0; i < arrSize; i++)
+        temp[i] = arr[i];
 
-    for (int i = 0; i< vec.size(); i++){
-        temp1 = (vec[i]);
+    delete[] arr;
+    arr = temp;
 
-        int j = 0;
-        while ((j <temp1.length()) && (temp1[j] == 'a' || temp1[j] == 'A'
-                                       || temp1[j] == 'b' || temp1[j] == 'B'
-                                       || temp1[j] == 'c' || temp1[j] == 'C'
-                                       || temp1[j] == 'd' || temp1[j] == 'D'
-                                       || temp1[j] == 'e' || temp1[j] == 'E'
-                                       || temp1[j] == 'f' || temp1[j] == 'F'
-                                       || temp1[j] == 'g' || temp1[j] == 'G'
-                                       || temp1[j] == 'h' || temp1[j] == 'H'
-                                       || temp1[j] == 'i' || temp1[j] == 'I'
-                                       || temp1[j] == 'j' || temp1[j] == 'J'
-                                       || temp1[j] == 'k' || temp1[j] == 'K'
-                                       || temp1[j] == 'l' || temp1[j] == 'L'
-                                       || temp1[j] == 'm' || temp1[j] == 'M'
-                                       || temp1[j] == 'n' || temp1[j] == 'N'
-                                       || temp1[j] == 'o' || temp1[j] == 'O'
-                                       || temp1[j] == 'p' || temp1[j] == 'P'
-                                       || temp1[j] == 'q' || temp1[j] == 'Q'
-                                       || temp1[j] == 'r' || temp1[j] == 'R'
-                                       || temp1[j] == 'S' || temp1[j] == 'S'
-                                       || temp1[j] == 't' || temp1[j] == 'T'
-                                       || temp1[j] == 'u' || temp1[j] == 'U'
-                                       || temp1[j] == 'v' || temp1[j] == 'V'
-                                       || temp1[j] == 'w' || temp1[j] == 'W'
-                                       || temp1[j] == 'x' || temp1[j] == 'X'
-                                       || temp1[j] == 'y' || temp1[j] == 'Y'
-                                       || temp1[j] == 'z' || temp1[j] == 'Z'))  // yes i know this is ugly :(. i can't remember the ascii conversion
+}
 
-        {
-            temp2 = temp2+ temp1[j];
-            j++;
+int main1() {
+
+    cout << "Please enter a sequence of positive integers, each in a separate line." << endl;
+    cout << "End you input by typing -1." << endl;
+
+    int userInput = 0;
+    int size = 10;
+    int userArrCount = 0;
+    int* userInputArr = new int[10];
+
+    while (userInput >= 0) {
+
+        cin >> userInput;
+
+        if (userArrCount <= size) {
+
+            userInputArr[userArrCount] = userInput;
+            userArrCount++;
+
+        }
+        else {
+
+            resizeArr(userInputArr, size, size * 2);
+            userInputArr[userArrCount] = userInput;
+            userArrCount++;
+            size *= 2;
+
         }
 
-        vec[i] = temp2;
-        temp2 = "";
     }
 
-    int count = 0;
-    for (int i = 0; i < vec.size(); i++){
-        if (vec[i] =="")
-            count++;
+    int search;
+
+    cout << "Please enter a number you want to search." << endl;
+    cin >> search;
+
+    int* finder = new int[1];
+    int finderSize = 1;
+    int finderIndexPos = 0;
+
+    for (int userInputArrPos = 0; userInputArrPos < userArrCount; userInputArrPos++) {
+
+        if (userInputArr[userInputArrPos] == search) {
+
+            finder[finderIndexPos] = userInputArrPos + 1;
+            finderIndexPos++;
+
+        }
+
+        if (finderIndexPos == finderSize) {
+
+            resizeArr(finder, finderSize, finderSize * 2);
+            finderSize *= 2;
+
+        }
+
     }
 
+    if (finderSize == 1) {
 
-    for (int i = 0; i < vec.size(); i++){
-        if (vec[i] !="")
-            cout << vec[i]<< endl;;
+        cout << search << " does not appear in this list.";
+
+    }
+    else {
+
+        cout << search << " shows in lines ";
+
+        for (int i = 0; i < finderIndexPos; i++) {
+
+            if (i == finderIndexPos - 1)
+                cout << finder[i] << ".";
+            else
+                cout << finder[i] << ", ";
+
+        }
+
     }
 
-    cout << "Number of Strings in the input sequence that contain only numeric characters and special characters: " << count<< endl;
+    delete[] userInputArr;
+    userInputArr = nullptr;
+    delete[] finder;
+    finder = nullptr;
+
+    return 0;
+
+}
+
+int main2() {
+
+    cout << "Please enter a sequence of positive integers, each in a separate line." << endl;
+    cout << "End you input by typing -1." << endl;
+
+    int userInput = 0;
+    vector<int> userInputArr;
+
+    while (userInput >= 0) {
+
+        cin >> userInput;
+
+        userInputArr.push_back(userInput);
+
+    }
+
+    int search;
+
+    cout << "Please enter a number you want to search." << endl;
+    cin >> search;
+
+    vector<int> finder;
+    int listTracker = 1;
+
+    for (int i = 0; i < userInputArr.size(); i++) {
+
+        if (userInputArr[i] == search) {
+
+            finder.push_back(i + 1);
+            listTracker++;
+
+        }
+
+    }
+
+    if (listTracker == 1) {
+
+        cout << search << " does not appear in this list.";
+
+    }
+    else {
+
+        cout << search << " shows in lines ";
+
+        for (int i = 0; i < finder.size(); i++) {
+
+            if (i == finder.size() - 1)
+                cout << finder[i] << ".";
+            else
+                cout << finder[i] << ", ";
+
+        }
+
+    }
 
     return 0;
 
