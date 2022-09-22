@@ -16,5 +16,7 @@
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/barndoor2.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/letter_triangle.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/exam2.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/maxZeroLength.dir
+/Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/2dup.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/ethanshafranmoltz/Documents/NYU/Bridge 2022/Winter 24 Week/Code/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

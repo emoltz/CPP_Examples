@@ -1,47 +1,67 @@
-int countZeros(int nums[], int len, int startIdx){
-    if (startIdx == len){
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int countZeros(int nums[], int len, int startIdx) {
+    if (startIdx == len) {
         return 0;
     }
-    if (nums[startIdx] == 0){
+    if (nums[startIdx] == 0) {
         return countZeros(nums, len, startIdx + 1) + 1;
-    }
-    else{
+    } else {
         return countZeros(nums, len, startIdx + 1);
     }
 }
 
 
-int maxZeroLength(int nums[], int len, int startIdx){
+int maxZeroLength(int nums[], int len, int startIdx) {
     int temp = 0, result = 0;
     while (startIdx < len) {
-        if (nums[startIdx] == 0){
+        if (nums[startIdx] == 0) {
             temp++;
             startIdx++;
-        }
-        else{
-            if (temp > result){
+        } else {
+            if (temp > result) {
                 result = temp;
             }
             temp = 0;
             startIdx++;
         }
     }
-    if (temp > result){
+    if (temp > result) {
         result = temp;
     }
     return result;
 }
 
-int maxZeroLengthRecursive(int nums[], int len, int startIdx){
-    if (len == startIdx){
-        return 0;
+int maxZeroLength2(int nums[], int len) {
+    int res = 0, cnt = 0;
+    for (int i = 0; i < len; i++) {
+        if (nums[i] == 0) {
+            res = max(res, ++cnt);
+        } else {
+            cnt = 0;
+        }
     }
-    int temp1 = 0, temp2 = 0;
-    if (nums[startIdx] == 0){
-        temp1 = maxZeroLengthRecursive(nums, len, startIdx + 1) + 1;
-    }
-    else{
-        temp2 = maxZeroLengthRecursive(nums, len, startIdx + 1);
-    }
-    return max(temp1, temp2);
+    return res;
+}
+
+int maxZeroLengthRecursive(int *nums, int len, int startIdx) {
+   if(startIdx == len){
+       return 0;
+   }
+   int maxLen = 0;
+   while (startIdx < len && nums[startIdx++] == 0){ //if it's not true, startIndex will still increment
+       maxLen++;
+   }
+   return max(maxLen, maxZeroLengthRecursive(nums, len, startIdx));
+}
+
+int main() {
+    int arr[6] = {0, 0, 1, 1, 0, 0};
+//    vector<int> arr = {0, 0, 1, 0, 0, 0};
+//    cout << maxZeroLength(arr, 6, 0);
+//    cout << maxZeroLengthRecursive(arr, 6, 0);
+    cout << countZeros(arr, 6, 0);
 }

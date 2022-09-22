@@ -1,174 +1,145 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-void resizeArr(int*& arr, int arrSize, int newArrSize);
-int main1();
-int main2();
-int main(){
+int* getPosNums1(int* arr, int arrSize, int& outPosArrSize);
+int* getPosNums2(int* arr, int arrSize, int* outPosArrSizePtr);
+void getPosNums3(int* arr, int arrSize, int*& outPosArr, int& outPosArrSize);
+void getPosNums4(int* arr, int arrSize, int** outPosArrPtr, int* outPosArrSizePtr);
 
-    main1();
-    cout << endl;
-    main2();
+void printArray(int* arr, int size);
+void resizeArray(int*& arr, int& arrSize);
+
+int main() {
+    int arrSize = 0;
+    int* arr = nullptr;
+
+    resizeArray(arr, arrSize);
+
+    int numOfPositives1;
+    int* retArr1 = getPosNums1(arr, arrSize, numOfPositives1);
+    cout<<"Version 1:"<<endl;
+    printArray(retArr1, numOfPositives1);
+
+    int numOfPositives2 = 0;
+    int* outPosArrSizePtr2 = &numOfPositives2;
+    int* retArr2 = getPosNums2(arr, arrSize, outPosArrSizePtr2);
+    cout<<"Version 2:"<<endl;
+    printArray(retArr2, *outPosArrSizePtr2);
+
+    int numOfPositives3 = 0;
+    int* outPosArr3 = nullptr;
+    getPosNums3(arr, arrSize, outPosArr3, numOfPositives3);
+    cout<<"Version 3:"<<endl;
+    printArray(outPosArr3, numOfPositives3);
+
+    int numOfPositives4 = 0;
+    int* ptrToNumOfPositives4 = &numOfPositives4;
+    int* firstDegreePointerToPosArr4 = nullptr;
+    int** secondDegreePointerToPosArr4 = &firstDegreePointerToPosArr4;
+    getPosNums4(arr, arrSize, secondDegreePointerToPosArr4, ptrToNumOfPositives4);
+    cout<<"Version 4:"<<endl;
+    printArray(*secondDegreePointerToPosArr4, *ptrToNumOfPositives4);
 
     return 0;
-
 }
 
-void resizeArr(int*& arr, int arrSize, int newArrSize) {
+int* getPosNums1(int* arr, int arrSize, int& outPosArrSize) {
+    for (int i = 0; i < arrSize; i++) {
+        if (arr[i] > 0) {
+            outPosArrSize++;
+        }
+    }
 
-    int* temp = new int[newArrSize];
+    int* positives = new int[outPosArrSize];
 
-    for (int i = 0; i < arrSize; i++)
-        temp[i] = arr[i];
+    for (int originalCounter = 0, posCounter = 0; originalCounter < arrSize; originalCounter++) {
+        if (arr[originalCounter] > 0) {
+            positives[posCounter++] = arr[originalCounter];
+        }
+    }
 
-    delete[] arr;
+    return positives;
+}
+
+int* getPosNums2(int* arr, int arrSize, int* outPosArrSizePtr) {
+    for (int i = 0; i < arrSize; i++) {
+        if (arr[i] > 0) {
+            *outPosArrSizePtr += 1;
+        }
+    }
+
+    int* positives = new int[*outPosArrSizePtr];
+
+    for (int originalCounter = 0, posCounter = 0; originalCounter < arrSize; originalCounter++) {
+        if (arr[originalCounter] > 0) {
+            positives[posCounter++] = arr[originalCounter];
+        }
+    }
+
+    return positives;
+}
+
+void getPosNums3(int* arr, int arrSize, int*& outPosArr, int& outPosArrSize) {
+    for (int i = 0; i < arrSize; i++) {
+        if (arr[i] > 0) {
+            outPosArrSize += 1;
+        }
+    }
+
+    int* positives = new int[outPosArrSize];
+
+    for (int originalCounter = 0, posCounter = 0; originalCounter < arrSize; originalCounter++) {
+        if (arr[originalCounter] > 0) {
+            positives[posCounter++] = arr[originalCounter];
+        }
+    }
+
+    outPosArr = positives;
+}
+
+void getPosNums4(int* arr, int arrSize, int** outPosArrPtr, int* outPosArrSizePtr) {
+    //count number of positives
+    for (int i = 0; i < arrSize; i++) {
+        if (arr[i] > 0) {
+            *outPosArrSizePtr += 1;
+        }
+    }
+
+    //create array of positive numbers
+    int* ptrToPosArr = new int[*outPosArrSizePtr];
+
+    //store positive values in the new positive array
+    for (int originalArrCounter = 0, posArrCounter = 0; originalArrCounter < arrSize; originalArrCounter++) {
+        if (arr[originalArrCounter] > 0) {
+            ptrToPosArr[posArrCounter++] = arr[originalArrCounter];
+        }
+    }
+
+    *outPosArrPtr = ptrToPosArr;
+    //things that will still exist after this function ends: first and second degree pointers, array values stored on the heap, numOfPositives4
+}
+
+void printArray(int* arr, int size) {
+    for (int i = 0; i < size; i++) {
+        cout<<arr[i]<<' ';
+    }
+    cout<<endl;
+}
+
+void resizeArray(int*& arr, int& arrSize) {
+    cout<<"Enter length of array: ";
+    cin>>arrSize;
+
+    int* temp = new int[arrSize];
+
+    int input;
+
+    cout<<"Enter array values separated by a space:"<<endl;
+    for (int i = 0; i < arrSize; i++) {
+        cin>>input;
+        temp[i] = input;
+    }
+
+    delete [] arr;
     arr = temp;
-
-}
-
-int main1() {
-
-    cout << "Please enter a sequence of positive integers, each in a separate line." << endl;
-    cout << "End you input by typing -1." << endl;
-
-    int userInput = 0;
-    int size = 10;
-    int userArrCount = 0;
-    int* userInputArr = new int[10];
-
-    while (userInput >= 0) {
-
-        cin >> userInput;
-
-        if (userArrCount <= size) {
-
-            userInputArr[userArrCount] = userInput;
-            userArrCount++;
-
-        }
-        else {
-
-            resizeArr(userInputArr, size, size * 2);
-            userInputArr[userArrCount] = userInput;
-            userArrCount++;
-            size *= 2;
-
-        }
-
-    }
-
-    int search;
-
-    cout << "Please enter a number you want to search." << endl;
-    cin >> search;
-
-    int* finder = new int[1];
-    int finderSize = 1;
-    int finderIndexPos = 0;
-
-    for (int userInputArrPos = 0; userInputArrPos < userArrCount; userInputArrPos++) {
-
-        if (userInputArr[userInputArrPos] == search) {
-
-            finder[finderIndexPos] = userInputArrPos + 1;
-            finderIndexPos++;
-
-        }
-
-        if (finderIndexPos == finderSize) {
-
-            resizeArr(finder, finderSize, finderSize * 2);
-            finderSize *= 2;
-
-        }
-
-    }
-
-    if (finderSize == 1) {
-
-        cout << search << " does not appear in this list.";
-
-    }
-    else {
-
-        cout << search << " shows in lines ";
-
-        for (int i = 0; i < finderIndexPos; i++) {
-
-            if (i == finderIndexPos - 1)
-                cout << finder[i] << ".";
-            else
-                cout << finder[i] << ", ";
-
-        }
-
-    }
-
-    delete[] userInputArr;
-    userInputArr = nullptr;
-    delete[] finder;
-    finder = nullptr;
-
-    return 0;
-
-}
-
-int main2() {
-
-    cout << "Please enter a sequence of positive integers, each in a separate line." << endl;
-    cout << "End you input by typing -1." << endl;
-
-    int userInput = 0;
-    vector<int> userInputArr;
-
-    while (userInput >= 0) {
-
-        cin >> userInput;
-
-        userInputArr.push_back(userInput);
-
-    }
-
-    int search;
-
-    cout << "Please enter a number you want to search." << endl;
-    cin >> search;
-
-    vector<int> finder;
-    int listTracker = 1;
-
-    for (int i = 0; i < userInputArr.size(); i++) {
-
-        if (userInputArr[i] == search) {
-
-            finder.push_back(i + 1);
-            listTracker++;
-
-        }
-
-    }
-
-    if (listTracker == 1) {
-
-        cout << search << " does not appear in this list.";
-
-    }
-    else {
-
-        cout << search << " shows in lines ";
-
-        for (int i = 0; i < finder.size(); i++) {
-
-            if (i == finder.size() - 1)
-                cout << finder[i] << ".";
-            else
-                cout << finder[i] << ", ";
-
-        }
-
-    }
-
-    return 0;
-
 }

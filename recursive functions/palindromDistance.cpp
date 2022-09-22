@@ -6,9 +6,9 @@ int palindromeDistance(int* arr, int n) {
         int last = arr[n - 1];
 
         if (first == last) {
-            return palindromeDistance(arr + 1, n - 2);
-        } else {
             return palindromeDistance(arr + 1, n - 2) + 1;
+        } else {
+            return palindromeDistance(arr + 1, n - 2);
         }
     }
 }
