@@ -152,11 +152,11 @@ int main(){
     // l.display();
 
 
-    // vector<int> v;
-    // v.push_back(1);
-    // v.push_back(2);
-    // v.push_back(3);
-    // vector<int>::iterator ptr;
+     vector<int> v;
+     v.push_back(1);
+     v.push_back(2);
+     v.push_back(3);
+     vector<int>::iterator ptr;
 
     // for (ptr = v.begin(); ptr < v.end(); ptr++){
     //     cout << *ptr << endl;
